@@ -1,0 +1,101 @@
+/**Font**/
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+/**Root**/
+:root{
+  --theme-color: #163832;
+}
+/**Body**/
+body {
+    margin: 0;
+    font-family: "Lato",sans-serif;
+}
+
+.body{
+  font-size: 1.25rem;
+
+}
+
+/**Socials**/
+.fab {
+    font-size: 20px;
+
+}
+/**Sidebar**/
+.imageside {
+    margin-left: 20px;
+    margin-top: 20px;
+    border: 2000px;
+    border-color: aquamarine;
+}
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 240px;
+    background-color: #163832;
+    position: absolute;
+    height: 100%;
+    overflow: hidden;
+    font-weight: 100;
+    text-align: center;
+    vertical-align: center;
+    overflow: scroll;
+    overflow-x: hidden;
+   
+}
+
+.sidebar::-webkit-scrollbar {
+    display: none;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+.sidebar a,span {
+    display: block;
+    color: rgb(128, 128, 128);
+    padding: 16px;
+    text-decoration: none;
+}
+
+.sidebar span{
+    font-size:3;
+}
+
+.sidebar a.active {
+    background-color: #1c473f;
+    color: white;
+}
+
+.sidebar a:hover:not(.active) {
+    background-color: #4fafa6;
+    color: white;
+}
+
+div.content {
+    margin-left: 240px;
+    padding: 1px 16px;
+    /*height: 1000px;*/
+}
+/**Phone**/
+@media screen and (max-width: 700px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .sidebar a {
+        float: left;
+    }
+
+    div.content {
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .sidebar a {
+        text-align: center;
+        float: none;
+    }
+}
+
