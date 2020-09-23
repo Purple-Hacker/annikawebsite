@@ -22,8 +22,6 @@ body {
 }
 /**Sidebar**/
 .imageside {
-    margin-left: 20px;
-    margin-top: 20px;
     border: 1000px;
     border-color: aquamarine;
 }
@@ -35,7 +33,7 @@ body {
     position: absolute;
     height: 100%;
     overflow: hidden;
-    font-weight: 100;
+    font-size: 30;
     text-align: center;
     vertical-align: center;
     overflow: scroll;
@@ -71,7 +69,7 @@ body {
 }
 
 div.content {
-    margin-left: 400px;
+    margin-left: 350px;
     padding: 1px 16px;
     /*height: 1000px;*/
 }
