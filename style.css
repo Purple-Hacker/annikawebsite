@@ -6,7 +6,7 @@
 }
 /**Body**/
 body {
-    margin: 0;
+    margin-left: 1000;
     font-family: "Garamond";
 }
 
@@ -17,14 +17,14 @@ body {
 
 /**Socials**/
 .fab {
-    font-size: 20px;
+    font-size: 30px;
 
 }
 /**Sidebar**/
 .imageside {
     margin-left: 20px;
     margin-top: 20px;
-    border: 2000px;
+    border: 1000px;
     border-color: aquamarine;
 }
 .sidebar {
