@@ -15,6 +15,12 @@ body {
 
 }
 
+h1{
+    font-family: "Abril Fatface";
+}
+p{
+    font-family: "Playfair Display";
+}
 /**Socials**/
 .fab {
     font-size: 30px;
