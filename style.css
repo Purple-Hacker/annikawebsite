@@ -20,7 +20,10 @@ h1{
 }
 p{
     font-family: "Crimson Text";
-    margin: 10px;
+}
+
+.content {
+    margin: 5px;
 }
 /**Socials**/
 .fab {
