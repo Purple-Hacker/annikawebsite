@@ -17,13 +17,19 @@ body {
 
 h1{
     font-family: "Amiri";
+    font-size: 31px
 }
 p{
     font-family: "Crimson Text";
 }
 
+h2{
+    font-size: 22px;
+}
+
 .content {
-    margin: 5px;
+    margin: 10px;
+    line-height: 0.4 ;
 }
 /**Socials**/
 .fab {
