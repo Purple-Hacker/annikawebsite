@@ -83,6 +83,7 @@ h2{
     padding: 16px;
     font-size: 24px;
     text-decoration: none;
+    text-transform: none;
 }
 
 .sidebar span{
