@@ -33,6 +33,10 @@ h2{
     margin: 0 auto;
     padding: 2px;
     height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
 }
 
 .resume {
