@@ -17,8 +17,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 activeId = 'nav-about';
             } else if (currentPage === 'science_writing.html') {
                 activeId = 'nav-science';
-            } else if (currentPage === 'projects.html') {
-                activeId = 'nav-projects';
+            } else if (currentPage === 'repositories.html') {
+    activeId = 'nav-repos';
             } else if (currentPage === 'funstuff.html') {
                 activeId = 'nav-fun';
             }

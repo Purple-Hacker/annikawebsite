@@ -48,12 +48,12 @@ function loadRepositories() {
                     const repoCards = repos.map(repo => createRepoCard(repo.name)).join('');
                     container.innerHTML = repoCards;
                 } else {
-                    container.innerHTML = '<p>No repositories found. Add your repositories to the REPOSITORIES array in projects.js</p>';
+                    container.innerHTML = '<p>No repositories found. Add your repositories to the REPOSITORIES array in repositories.js</p>';
                 }
             })
             .catch(error => {
                 console.error('Error fetching repositories:', error);
-                container.innerHTML = '<p>Unable to load repositories. Add your repositories to the REPOSITORIES array in projects.js</p>';
+                container.innerHTML = '<p>Unable to load repositories. Add your repositories to the REPOSITORIES array in repositories.js</p>';
             });
     } else {
         // Use the specified repositories
