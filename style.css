@@ -210,3 +210,175 @@ div.content {
     }
 }
 
+/**CV Page**/
+.cv-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.cv-pdf-button {
+    background: var(--theme-color);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cv-pdf-button:hover {
+    background-color: #1c473f;
+    color: white;
+    text-decoration: none;
+}
+
+.cv-pdf-button i {
+    font-size: 18px;
+}
+
+.cv-section {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #e1e4e8;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cv-section:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.cv-section-title {
+    color: var(--theme-color);
+    margin-bottom: 20px;
+    font-size: 24px;
+    border-bottom: 2px solid var(--theme-color);
+    padding-bottom: 10px;
+}
+
+.cv-entry {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: white;
+    border-radius: 6px;
+    border-left: 4px solid var(--theme-color);
+}
+
+.cv-entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.cv-entry-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--theme-color);
+    margin: 0;
+    flex: 1;
+}
+
+.cv-entry-institution {
+    font-size: 16px;
+    color: #666;
+    font-style: italic;
+}
+
+.cv-entry-year {
+    font-size: 14px;
+    color: #888;
+    background: #f0f0f0;
+    padding: 4px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+}
+
+.cv-entry-description,
+.cv-entry-items {
+    margin: 10px 0 0 0;
+    padding-left: 20px;
+}
+
+.cv-entry-description li,
+.cv-entry-items li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+    color: #333;
+}
+
+.cv-list,
+.cv-nested-list {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.cv-list li,
+.cv-nested-list li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+    color: #333;
+}
+
+.cv-entry a {
+    color: var(--theme-color);
+    text-decoration: none;
+}
+
+.cv-entry a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile responsive for CV header */
+@media screen and (max-width: 700px) {
+    .cv-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .cv-pdf-button {
+        align-self: flex-start;
+    }
+}
+
+/* Dark mode support for CV */
+@media (prefers-color-scheme: dark) {
+    .cv-section {
+        background: #2d3748;
+        border-color: #4a5568;
+    }
+    
+    .cv-entry {
+        background: #374151;
+        color: #e5e7eb;
+    }
+    
+    .cv-entry-title {
+        color: #60a5fa;
+    }
+    
+    .cv-entry-description li,
+    .cv-entry-items li,
+    .cv-list li,
+    .cv-nested-list li {
+        color: #d1d5db;
+    }
+    
+    .cv-entry-year {
+        background: #4b5563;
+        color: #9ca3af;
+    }
+}
+
