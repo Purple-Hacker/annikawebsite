@@ -110,7 +110,15 @@ div.content {
     .sidebar {
         width: 100%;
         height: auto;
-        position: relative;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        transition: left 0.3s ease;
+        z-index: 1000;
+    }
+
+    .sidebar.show {
+        left: 0;
     }
 
     .sidebar a {
@@ -120,6 +128,25 @@ div.content {
     div.content {
         margin-left: 0;
     }
+
+    .mobile-menu-toggle {
+        display: block;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 1001;
+        background: var(--theme-color);
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+}
+
+.mobile-menu-toggle {
+    display: none;
 }
 
 @media screen and (max-width: 400px) {
