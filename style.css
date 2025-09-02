@@ -95,7 +95,7 @@ h2{
     color: white;
 }
 
-.sidebar a:hover:not(.active) {
+.sidebar a:hover:not(.active):not(.imageside) {
     background-color: #4fafa6;
     color: white;
 }
