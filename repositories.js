@@ -3,10 +3,11 @@ const GITHUB_USERNAME = 'annikasalmi';
 
 // Repository list - add your repositories here
 const REPOSITORIES = [
-    // Add your repository names here, for example:
-    // 'annikawebsite',
-    // 'another-repo',
-    // 'cool-project'
+    'mdwarf-habitability',
+    'exo-venus-evolution', 
+    'exo-atm-predict',
+    'alignpy',
+    'annikasalmi.github.io'
 ];
 
 // Function to create repository card
