@@ -382,3 +382,35 @@ div.content {
     }
 }
 
+/**Science Writing Page**/
+.science-writing-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.science-writing-content h1,
+.science-writing-content h2,
+.science-writing-content h3 {
+    margin-bottom: 20px;
+    color: var(--theme-color);
+}
+
+.science-writing-content a {
+    display: block;
+    margin-bottom: 15px;
+    color: var(--theme-color);
+    text-decoration: none;
+    line-height: 1.6;
+    transition: color 0.2s ease;
+}
+
+.science-writing-content a:hover {
+    color: #4fafa6;
+    text-decoration: underline;
+}
+
+.science-writing-content br {
+    display: none;
+}
+

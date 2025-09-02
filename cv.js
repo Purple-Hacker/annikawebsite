@@ -242,6 +242,13 @@ function renderNestedList(contents) {
 function renderCV() {
     const container = document.getElementById('cv-content');
     
+    if (!container) {
+        console.error('CV content container not found!');
+        return;
+    }
+    
+    console.log('Rendering CV with', CV_DATA.length, 'sections');
+    
     const cvHTML = CV_DATA.map(section => {
         let html = '<div class="cv-section">';
         html += `<h3 class="cv-section-title">${section.title}</h3>`;
@@ -266,7 +273,17 @@ function renderCV() {
     }).join('');
     
     container.innerHTML = cvHTML;
+    
+    // Add some debugging
+    console.log('CV rendered successfully');
+    console.log('Container now contains:', container.innerHTML.length, 'characters');
 }
 
-// Load CV when page loads
-document.addEventListener('DOMContentLoaded', renderCV);
+// Load CV when page loads, but wait a bit for sidebar to load first
+document.addEventListener('DOMContentLoaded', function() {
+    // Wait a bit for sidebar to load, then render CV
+    setTimeout(renderCV, 100);
+    
+    // Also try to render after a longer delay as fallback
+    setTimeout(renderCV, 1000);
+});
