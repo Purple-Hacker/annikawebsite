@@ -95,6 +95,38 @@ const CV_DATA = [
         ]
     },
     {
+        title: "Projects",
+        type: "time_table",
+        contents: [
+            {
+                title: '<a href="https://github.com/annikasalmi/mdwarf-habitability">mdwarf-habitability</a>',
+                year: "2024 (in progress)",
+                description: "Predict the number of habitable zone M-dwarf planetary atmospheres HWO and LIFE will see using an MCMC simulated planetary population. Recreated LIFE results and looked for how many planets HWO would find."
+            },
+            {
+                title: '<a href="https://github.com/annikasalmi/exo-venus-evolution">exo-venus-evolution</a>',
+                year: "2024 (in progress)",
+                description: "Model the evolution of \"exo-Venuses\" over their geological history, using Venus and exo-Venus data"
+            },
+            {
+                title: '<a href="https://github.com/annikasalmi/alignpy">alignpy</a>',
+                year: "2024 (in progress)",
+                description: "Built a tool that locally downloads FITS files of astronomical objects, specified by filter and catalog. Once they are downloaded, the image files can be aligned and plotted via addition, subtraction, or division"
+            }
+        ]
+    },
+
+    {
+        title: "Conference Posters",
+        type: "time_table",
+        contents: [
+            {
+                title: 'Assessing the habitability and potential detectability of life on planets around M dwarfs​',
+                year: "2025",
+                description: "Viktoria Ellmies, Imre Kisvárdai, Michael Kreuziger, Akhil Kumar, Annika Salmi (equal contributions, alphabetical)"
+            }]
+    },
+    {
         title: "Science Communication",
         type: "time_table",
         contents: [
@@ -133,27 +165,6 @@ const CV_DATA = [
                 institution: "Joint Antarctic Science Expedition",
                 year: "2016",
                 description: []
-            }
-        ]
-    },
-    {
-        title: "Projects",
-        type: "time_table",
-        contents: [
-            {
-                title: '<a href="https://github.com/annikasalmi/mdwarf-habitability">mdwarf-habitability</a>',
-                year: "2024 (in progress)",
-                description: "Predict the number of habitable zone M-dwarf planetary atmospheres HWO and LIFE will see using an MCMC simulated planetary population. Recreated LIFE results and looked for how many planets HWO would find."
-            },
-            {
-                title: '<a href="https://github.com/annikasalmi/exo-venus-evolution">exo-venus-evolution</a>',
-                year: "2024 (in progress)",
-                description: "Model the evolution of \"exo-Venuses\" over their geological history, using Venus and exo-Venus data"
-            },
-            {
-                title: '<a href="https://github.com/annikasalmi/alignpy">alignpy</a>',
-                year: "2024 (in progress)",
-                description: "Built a tool that locally downloads FITS files of astronomical objects, specified by filter and catalog. Once they are downloaded, the image files can be aligned and plotted via addition, subtraction, or division"
             }
         ]
     },
