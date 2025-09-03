@@ -8,6 +8,26 @@ function escapeHtml(text) {
     return div.innerHTML;
 }
 
+// Utility function to safely render HTML content (for intentional HTML like links)
+function renderHtml(text) {
+    if (typeof text !== 'string') {
+        return String(text);
+    }
+    // Only allow safe HTML tags: a, b, i, em, strong, br
+    const safeHtml = text.replace(/<(\/?)(a|b|i|em|strong|br)([^>]*)>/gi, (match, slash, tag, attrs) => {
+        if (tag === 'a') {
+            // Only allow href attributes for links
+            const hrefMatch = attrs.match(/href\s*=\s*["']([^"']+)["']/i);
+            if (hrefMatch && hrefMatch[1].startsWith('http')) {
+                return match; // Allow the link
+            }
+            return escapeHtml(match); // Escape unsafe links
+        }
+        return match; // Allow other safe tags
+    });
+    return safeHtml;
+}
+
 // CV data structure
 const CV_DATA = [
     {
@@ -209,7 +229,7 @@ const CV_DATA = [
         contents: [
             'Ski mountaineering',
             'Climbing',
-            'Reading (<a href="https://www.gooodreads.com/annikasalmi">Goodreads</a>)'
+            'Reading (<a href="https://www.goodreads.com/annikasalmi">Goodreads</a>)'
         ]
     }
 ];
@@ -231,9 +251,9 @@ function renderTimeTable(contents) {
         let html = '<div class="cv-entry">';
         html += '<div class="cv-entry-header">';
         
-        // Safe title rendering with fallback
+        // Safe title rendering with fallback - allow HTML for links
         const title = entry.title || 'Untitled';
-        html += `<h4 class="cv-entry-title">${escapeHtml(title)}</h4>`;
+        html += `<h4 class="cv-entry-title">${renderHtml(title)}</h4>`;
         
         // Safe institution rendering
         if (entry.institution && typeof entry.institution === 'string' && entry.institution.trim()) {
@@ -290,7 +310,7 @@ function renderList(contents) {
         return '';
     }
     
-    return `<ul class="cv-list">${validItems.map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ul>`;
+    return `<ul class="cv-list">${validItems.map(item => `<li>${renderHtml(item)}</li>`).join('')}</ul>`;
 }
 
 // Function to render nested list entries
@@ -305,7 +325,7 @@ function renderNestedList(contents) {
         return '';
     }
     
-    return `<ul class="cv-nested-list">${validItems.map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ul>`;
+    return `<ul class="cv-nested-list">${validItems.map(item => `<li>${renderHtml(item)}</li>`).join('')}</ul>`;
 }
 
 // Function to render CV content
