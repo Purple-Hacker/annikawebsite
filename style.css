@@ -6,7 +6,7 @@
 }
 /**Body**/
 body {
-    margin-left: 1000;
+    margin-left: 350px;
     font-family: "Garamond";
 }
 
@@ -125,6 +125,10 @@ div.content {
         float: left;
     }
 
+    body {
+        margin-left: 0;
+    }
+    
     div.content {
         margin-left: 0;
     }
@@ -412,5 +416,29 @@ div.content {
 
 .science-writing-content br {
     display: none;
+}
+
+/* CV Error States */
+.cv-error {
+    background: #fee;
+    border: 1px solid #fcc;
+    color: #c33;
+    padding: 20px;
+    border-radius: 6px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.cv-unknown-type {
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 4px;
+    margin: 10px 0;
+}
+
+.cv-plain-content {
+    padding: 10px;
+    line-height: 1.6;
+    color: #333;
 }
 

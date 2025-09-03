@@ -1,3 +1,13 @@
+// Utility function to safely escape HTML
+function escapeHtml(text) {
+    if (typeof text !== 'string') {
+        return String(text);
+    }
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+}
+
 // CV data structure
 const CV_DATA = [
     {
@@ -195,30 +205,59 @@ const CV_DATA = [
 
 // Function to render time table entries
 function renderTimeTable(contents) {
+    if (!Array.isArray(contents)) {
+        console.warn('renderTimeTable: contents is not an array:', contents);
+        return '';
+    }
+    
     return contents.map(entry => {
+        // Validate entry object
+        if (!entry || typeof entry !== 'object') {
+            console.warn('renderTimeTable: invalid entry:', entry);
+            return '';
+        }
+        
         let html = '<div class="cv-entry">';
         html += '<div class="cv-entry-header">';
-        html += `<h4 class="cv-entry-title">${entry.title}</h4>`;
-        if (entry.institution) {
-            html += `<div class="cv-entry-institution">${entry.institution}</div>`;
+        
+        // Safe title rendering with fallback
+        const title = entry.title || 'Untitled';
+        html += `<h4 class="cv-entry-title">${escapeHtml(title)}</h4>`;
+        
+        // Safe institution rendering
+        if (entry.institution && typeof entry.institution === 'string' && entry.institution.trim()) {
+            html += `<div class="cv-entry-institution">${escapeHtml(entry.institution)}</div>`;
         }
-        if (entry.year) {
-            html += `<div class="cv-entry-year">${entry.year}</div>`;
+        
+        // Safe year rendering
+        if (entry.year && (typeof entry.year === 'string' || typeof entry.year === 'number')) {
+            html += `<div class="cv-entry-year">${escapeHtml(String(entry.year))}</div>`;
         }
+        
         html += '</div>';
         
-        if (entry.description && entry.description.length > 0) {
-            html += '<ul class="cv-entry-description">';
-            entry.description.forEach(item => {
-                html += `<li>${item}</li>`;
-            });
-            html += '</ul>';
+        // Safe description rendering
+        if (entry.description) {
+            if (Array.isArray(entry.description) && entry.description.length > 0) {
+                html += '<ul class="cv-entry-description">';
+                entry.description.forEach(item => {
+                    if (item && typeof item === 'string' && item.trim()) {
+                        html += `<li>${escapeHtml(item)}</li>`;
+                    }
+                });
+                html += '</ul>';
+            } else if (typeof entry.description === 'string' && entry.description.trim()) {
+                html += `<div class="cv-entry-description">${escapeHtml(entry.description)}</div>`;
+            }
         }
         
-        if (entry.items && entry.items.length > 0) {
+        // Safe items rendering
+        if (entry.items && Array.isArray(entry.items) && entry.items.length > 0) {
             html += '<ul class="cv-entry-items">';
             entry.items.forEach(item => {
-                html += `<li>${item}</li>`;
+                if (item && typeof item === 'string' && item.trim()) {
+                    html += `<li>${escapeHtml(item)}</li>`;
+                }
             });
             html += '</ul>';
         }
@@ -230,12 +269,32 @@ function renderTimeTable(contents) {
 
 // Function to render list entries
 function renderList(contents) {
-    return `<ul class="cv-list">${contents.map(item => `<li>${item}</li>`).join('')}</ul>`;
+    if (!Array.isArray(contents)) {
+        console.warn('renderList: contents is not an array:', contents);
+        return '';
+    }
+    
+    const validItems = contents.filter(item => item && typeof item === 'string' && item.trim());
+    if (validItems.length === 0) {
+        return '';
+    }
+    
+    return `<ul class="cv-list">${validItems.map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ul>`;
 }
 
 // Function to render nested list entries
 function renderNestedList(contents) {
-    return `<ul class="cv-nested-list">${contents.map(item => `<li>${item}</li>`).join('')}</ul>`;
+    if (!Array.isArray(contents)) {
+        console.warn('renderNestedList: contents is not an array:', contents);
+        return '';
+    }
+    
+    const validItems = contents.filter(item => item && typeof item === 'string' && item.trim());
+    if (validItems.length === 0) {
+        return '';
+    }
+    
+    return `<ul class="cv-nested-list">${validItems.map(item => `<li>${escapeHtml(item)}</li>`).join('')}</ul>`;
 }
 
 // Function to render CV content
@@ -247,43 +306,104 @@ function renderCV() {
         return;
     }
     
+    // Validate CV_DATA
+    if (!Array.isArray(CV_DATA) || CV_DATA.length === 0) {
+        console.error('CV_DATA is invalid or empty:', CV_DATA);
+        container.innerHTML = '<div class="cv-error">Error: CV data is invalid or empty</div>';
+        return;
+    }
+    
     console.log('Rendering CV with', CV_DATA.length, 'sections');
     
-    const cvHTML = CV_DATA.map(section => {
+    const cvHTML = CV_DATA.map((section, index) => {
+        // Validate section object
+        if (!section || typeof section !== 'object') {
+            console.warn(`Invalid section at index ${index}:`, section);
+            return '';
+        }
+        
+        // Validate required fields
+        if (!section.title || typeof section.title !== 'string') {
+            console.warn(`Section at index ${index} missing or invalid title:`, section);
+            return '';
+        }
+        
         let html = '<div class="cv-section">';
-        html += `<h3 class="cv-section-title">${section.title}</h3>`;
+        html += `<h3 class="cv-section-title">${escapeHtml(section.title)}</h3>`;
         html += '<div class="cv-section-content">';
         
-        switch (section.type) {
-            case 'time_table':
-                html += renderTimeTable(section.contents);
-                break;
-            case 'list':
-                html += renderList(section.contents);
-                break;
-            case 'nested_list':
-                html += renderNestedList(section.contents);
-                break;
-            default:
-                html += section.contents;
+        if (section.contents && Array.isArray(section.contents)) {
+            switch (section.type) {
+                case 'time_table':
+                    html += renderTimeTable(section.contents);
+                    break;
+                case 'list':
+                    html += renderList(section.contents);
+                    break;
+                case 'nested_list':
+                    html += renderNestedList(section.contents);
+                    break;
+                default:
+                    // For unknown types, try to render as plain content
+                    if (section.contents.length > 0) {
+                        html += '<div class="cv-unknown-type">';
+                        section.contents.forEach(item => {
+                            if (item && typeof item === 'string' && item.trim()) {
+                                html += `<p>${escapeHtml(item)}</p>`;
+                            }
+                        });
+                        html += '</div>';
+                    }
+            }
+        } else if (section.contents) {
+            // Handle non-array contents
+            if (typeof section.contents === 'string' && section.contents.trim()) {
+                html += `<div class="cv-plain-content">${escapeHtml(section.contents)}</div>`;
+            }
         }
         
         html += '</div></div>';
         return html;
-    }).join('');
+    }).filter(html => html !== '').join('');
+    
+    if (!cvHTML.trim()) {
+        container.innerHTML = '<div class="cv-error">Error: No valid CV content could be rendered</div>';
+        return;
+    }
     
     container.innerHTML = cvHTML;
     
     // Add some debugging
     console.log('CV rendered successfully');
     console.log('Container now contains:', container.innerHTML.length, 'characters');
+    console.log('Rendered sections:', CV_DATA.filter(s => s && s.title).map(s => s.title));
 }
 
 // Load CV when page loads, but wait a bit for sidebar to load first
 document.addEventListener('DOMContentLoaded', function() {
-    // Wait a bit for sidebar to load, then render CV
-    setTimeout(renderCV, 100);
+    console.log('DOM Content Loaded');
+    console.log('CV_DATA length:', CV_DATA.length);
+    console.log('CV_DATA first section:', CV_DATA[0]);
+    
+    // Try to render immediately first
+    console.log('Attempting immediate render');
+    renderCV();
+    
+    // Wait a bit for sidebar to load, then render CV again
+    setTimeout(function() {
+        console.log('First timeout - attempting to render CV');
+        renderCV();
+    }, 100);
     
     // Also try to render after a longer delay as fallback
-    setTimeout(renderCV, 1000);
+    setTimeout(function() {
+        console.log('Second timeout - attempting to render CV');
+        renderCV();
+    }, 1000);
+    
+    // Final fallback - render after 3 seconds
+    setTimeout(function() {
+        console.log('Final fallback - attempting to render CV');
+        renderCV();
+    }, 3000);
 });
