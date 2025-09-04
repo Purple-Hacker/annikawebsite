@@ -70,4 +70,9 @@ function initializeMobileMenu() {
             }
         });
     }
-} 
+}
+
+// Initialize mobile menu immediately when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    initializeMobileMenu();
+}); 
