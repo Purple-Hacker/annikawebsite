@@ -1,5 +1,4 @@
-/**Font**/
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
 /**Root**/
 :root{
   --theme-color: #163832;
@@ -10,10 +9,7 @@ body {
     font-family: "Garamond";
 }
 
-.body{
-  font-size: 24px;  
 
-}
 
 h1{
     font-family: "Garamond";
@@ -50,10 +46,7 @@ h3{
     min-height: 100vh;
 }
 
-.resume {
 
-    line-height:0.4 !important;
-}
 /**Socials**/
 .fab {
     font-size: 30px;
@@ -61,8 +54,7 @@ h3{
 }
 /**Sidebar**/
 .imageside {
-    border: 1000px;
-    border-color: aquamarine;
+    /* Portrait image styling */
 }
 .sidebar {
     margin: 0;
@@ -73,13 +65,10 @@ h3{
     left: 0;
     top: 0;
     height: 100%;
-    overflow: hidden;
     font-size: 30px;
     text-align: center;
-    vertical-align: center;
-    overflow: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
-   
 }
 
 .sidebar::-webkit-scrollbar {
@@ -97,9 +86,7 @@ h3{
     text-transform: none;
 }
 
-.sidebar span{
-    font-size:3;
-}
+
 
 .sidebar a.active {
     background-color: #1c473f;
@@ -112,10 +99,10 @@ h3{
 }
 
 div.content {
-    margin-left: 310px;
+    margin-left:301px;
     padding: 1px 16px;
-    /*height: 1000px;*/
 }
+
 /* Mobile styles - only apply below 700px */
 @media screen and (max-width: 700px) {
     .sidebar {
@@ -310,6 +297,10 @@ div.content {
     border-bottom: 2px solid white;
     padding-bottom: 10px;
     font-family: "Garamond";
+}
+
+.cv-section-content {
+    /* Content within CV sections */
 }
 
 .cv-entry {
