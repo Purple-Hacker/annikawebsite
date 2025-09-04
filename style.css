@@ -6,7 +6,7 @@
 }
 /**Body**/
 body {
-    margin-left: 300px;
+    margin-left: 10px;
     font-family: "Garamond";
 }
 
@@ -16,15 +16,26 @@ body {
 }
 
 h1{
-    font-family: "Amiri";
-    font-size: 31px
+    font-family: "Garamond";
+    font-size: 32px;
+    margin-bottom: 20px;
 }
 p{
-    font-family: "Crimson Text";
+    font-family: "Garamond";
+    font-size: 16px;
+    line-height: 1.6;
 }
 
 h2{
-    font-size: 22px;
+    font-family: "Garamond";
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+h3{
+    font-family: "Garamond";
+    font-size: 20px;
+    margin-bottom: 14px;
 }
 
 .content {
@@ -101,7 +112,7 @@ h2{
 }
 
 div.content {
-    margin-left: 350px;
+    margin-left: 50px;
     padding: 1px 16px;
     /*height: 1000px;*/
 }
@@ -139,7 +150,7 @@ div.content {
     }
 
     .mobile-menu-toggle {
-        display: block;
+        display: block !important;
         position: fixed;
         top: 20px;
         left: 20px;
@@ -285,6 +296,7 @@ div.content {
     font-size: 24px;
     border-bottom: 2px solid white;
     padding-bottom: 10px;
+    font-family: "Garamond";
 }
 
 .cv-entry {
@@ -305,11 +317,12 @@ div.content {
 }
 
 .cv-entry-title {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 600;
     color: var(--theme-color);
     margin: 0;
     flex: 1;
+    font-family: "Garamond";
 }
 
 .cv-entry-institution {
