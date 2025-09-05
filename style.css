@@ -286,10 +286,10 @@ div.content {
 }
 
 .cv-section-title {
-    color: var(--theme-color);
+    color: white;
     margin-bottom: 20px;
     font-size: 24px;
-    border-bottom: 2px solid var(--theme-color);
+    border-bottom: 2px solid white;
     padding-bottom: 10px;
     font-family: "Garamond";
 }

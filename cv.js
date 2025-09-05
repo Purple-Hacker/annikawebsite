@@ -21,8 +21,12 @@ function renderHtml(text) {
     
     // Only allow safe HTML tags: a, b, i, em, strong, br
     const safeHtml = text.replace(/<(\/?)(a|b|i|em|strong|br)([^>]*)>/gi, (match, slash, tag, attrs) => {
-        if (tag === 'a') {
-            // Only allow href attributes for links - check for both http and https
+        if (tag.toLowerCase() === 'a') {
+            // For closing tags, always allow them
+            if (slash === '/') {
+                return match;
+            }
+            // For opening tags, check href
             const hrefMatch = attrs.match(/href\s*=\s*["']([^"']+)["']/i);
             if (hrefMatch && (hrefMatch[1].startsWith('http://') || hrefMatch[1].startsWith('https://'))) {
                 return match; // Allow the link
