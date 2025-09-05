@@ -46,8 +46,11 @@ function initializeMobileMenu() {
     const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
     const sidebar = document.querySelector('.sidebar');
     
+    console.log('Initializing mobile menu:', { mobileMenuToggle, sidebar });
+    
     if (mobileMenuToggle && sidebar) {
         mobileMenuToggle.addEventListener('click', function() {
+            console.log('Mobile menu toggle clicked');
             sidebar.classList.toggle('show');
         });
         
@@ -71,8 +74,3 @@ function initializeMobileMenu() {
         });
     }
 }
-
-// Initialize mobile menu immediately when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-    initializeMobileMenu();
-}); 
