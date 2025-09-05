@@ -1,5 +1,8 @@
 // Load sidebar content and set active page
+console.log('Sidebar.js loaded');
+
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM Content Loaded');
     const sidebar = document.querySelector('.sidebar');
     if (!sidebar) return;
 
@@ -7,7 +10,9 @@ document.addEventListener('DOMContentLoaded', function() {
     fetch('sidebar.html')
         .then(response => response.text())
         .then(html => {
+            console.log('Sidebar HTML loaded:', html);
             sidebar.innerHTML = html;
+            console.log('Sidebar innerHTML set, current content:', sidebar.innerHTML);
             
             // Set active page based on current URL
             const currentPage = window.location.pathname.split('/').pop() || 'index.html';
