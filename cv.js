@@ -13,12 +13,18 @@ function renderHtml(text) {
     if (typeof text !== 'string') {
         return String(text);
     }
+    
+    // If the text doesn't contain any HTML tags, just escape it normally
+    if (!text.includes('<') || !text.includes('>')) {
+        return escapeHtml(text);
+    }
+    
     // Only allow safe HTML tags: a, b, i, em, strong, br
     const safeHtml = text.replace(/<(\/?)(a|b|i|em|strong|br)([^>]*)>/gi, (match, slash, tag, attrs) => {
         if (tag === 'a') {
-            // Only allow href attributes for links
+            // Only allow href attributes for links - check for both http and https
             const hrefMatch = attrs.match(/href\s*=\s*["']([^"']+)["']/i);
-            if (hrefMatch && hrefMatch[1].startsWith('http')) {
+            if (hrefMatch && (hrefMatch[1].startsWith('http://') || hrefMatch[1].startsWith('https://'))) {
                 return match; // Allow the link
             }
             return escapeHtml(match); // Escape unsafe links
@@ -190,27 +196,11 @@ const CV_DATA = [
     },
     {
         title: "Honors and Awards",
-        type: "time_table",
+        type: "list",
         contents: [
-            {
-                year: "2021",
-                items: [
-                    "Mellon Forum fund",
-                    "Paul K. Richter and Evalyn E. Cook Richter Memorial Fund"
-                ]
-            },
-            {
-                year: "2020",
-                items: [
-                    "Paul K. Richter and Evalyn E. Cook Richter Memorial Fund"
-                ]
-            },
-            {
-                year: "2016",
-                items: [
-                    "National Science Foundation funding to go to Antarctica"
-                ]
-            }
+            "Mellon Forum fund (2021)",
+            "Paul K. Richter and Evalyn E. Cook Richter Memorial Fund (2020, 2021)",
+            "National Science Foundation funding to go to Antarctica (2016)"
         ]
     },
     {
