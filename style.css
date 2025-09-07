@@ -18,7 +18,7 @@ h1{
 }
 p{
     font-family: "Garamond";
-    font-size: 16px;
+    font-size: 20px;
     line-height: 1.6;
 }
 
@@ -254,7 +254,7 @@ div.content {
     padding: 12px 20px;
     border-radius: 6px;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 18px;
     transition: background-color 0.2s ease;
     display: inline-flex;
     align-items: center;
@@ -325,13 +325,13 @@ div.content {
 }
 
 .cv-entry-institution {
-    font-size: 16px;
+    font-size: 18px;
     color: white;
     font-style: italic;
 }
 
 .cv-entry-year {
-    font-size: 14px;
+    font-size: 16px;
     color: #888;
     background: #f0f0f0;
     padding: 4px 8px;
