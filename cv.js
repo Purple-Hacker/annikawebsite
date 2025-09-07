@@ -49,7 +49,7 @@ const CV_DATA = [
                 institution: "ETH Zurich",
                 year: "2025-present",
                 description: [
-                    "Working on carbon and sulfur cycles on exoplanets"
+                    "Working on carbon and sulfur cycles on exoplanets. Supervised by Professor Caroline Dorn, Porfessor Paul Tackley, and Professor Loic Pellisier."
                 ]
             },
             {
@@ -58,7 +58,7 @@ const CV_DATA = [
                 year: "2024-2025",
                 description: [
                     "Received distinction (highest mark possible)",
-                    "Thesis on simulating LIFE and HWO's future detections",
+                    "Thesis on simulating LIFE and HWO's future detections. Supervised by Professor Amy Bonsor",
                     "Modules including Planetary System Dynamics; Extrasolar Planets Atmospheres and Interiors"
                 ]
             },
