@@ -27,7 +27,14 @@ document.addEventListener('DOMContentLoaded', function() {
             links.forEach(l => {
                 const el = document.getElementById(l.target);
                 const linkEl = document.getElementById(l.id);
-                if (el && linkEl) sectionMap.set(el, linkEl);
+                console.log(`Looking for section ${l.target}:`, el);
+                console.log(`Looking for link ${l.id}:`, linkEl);
+                if (el && linkEl) {
+                    sectionMap.set(el, linkEl);
+                    console.log(`Added to sectionMap: ${l.target} -> ${l.id}`);
+                } else {
+                    console.log(`Missing: section=${!!el}, link=${!!linkEl}`);
+                }
             });
 
             function setActive(linkEl) {
@@ -48,7 +55,9 @@ document.addEventListener('DOMContentLoaded', function() {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     const linkEl = sectionMap.get(entry.target);
+                    console.log(`Section ${entry.target.id} intersecting:`, entry.isIntersecting, 'ratio:', entry.intersectionRatio);
                     if (entry.isIntersecting && entry.intersectionRatio > 0.3) {
+                        console.log(`Setting active for ${entry.target.id}`);
                         setActive(linkEl);
                         history.replaceState(null, '', `#${entry.target.id}`);
                     }
