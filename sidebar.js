@@ -51,39 +51,65 @@ document.addEventListener('DOMContentLoaded', function() {
                 setActive(document.getElementById('nav-about'));
             }
 
-            // Observe sections
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    const linkEl = sectionMap.get(entry.target);
-                    console.log(`Section ${entry.target.id} intersecting:`, entry.isIntersecting, 'ratio:', entry.intersectionRatio);
-                    if (entry.isIntersecting && entry.intersectionRatio > 0.3) {
-                        console.log(`Setting active for ${entry.target.id}`);
-                        setActive(linkEl);
-                        history.replaceState(null, '', `#${entry.target.id}`);
-                    }
-                });
-            }, { rootMargin: '0px 0px -20% 0px', threshold: [0.3, 0.5, 0.7] });
+            // Scroll-based section detection (robust with scroll-snap)
+            const sections = Array.from(sectionMap.keys());
+            let ticking = false;
 
-            sectionMap.forEach((_, sectionEl) => observer.observe(sectionEl));
+            function updateActiveByScroll() {
+                ticking = false;
+                if (sections.length === 0) return;
+                // Choose the section whose top is closest to viewport top (because of scroll-snap: start)
+                const closest = sections.reduce((best, el) => {
+                    const top = Math.abs(el.getBoundingClientRect().top);
+                    if (!best || top < best.dist) return { el, dist: top };
+                    return best;
+                }, null);
+                if (!closest) return;
+                const linkEl = sectionMap.get(closest.el);
+                if (linkEl) {
+                    setActive(linkEl);
+                    history.replaceState(null, '', `#${closest.el.id}`);
+                }
+            }
+
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    window.requestAnimationFrame(updateActiveByScroll);
+                    ticking = true;
+                }
+            }, { passive: true });
+
+            window.addEventListener('resize', () => {
+                updateActiveByScroll();
+            });
+
+            // Initial sync
+            updateActiveByScroll();
             
-            // Add click handlers to sidebar links for immediate active state
+            // Add click handlers to sidebar links for immediate active state and smooth scroll
             links.forEach(link => {
                 const linkEl = document.getElementById(link.id);
                 if (linkEl) {
                     linkEl.addEventListener('click', function(e) {
-                        // Set active immediately on click
+                        // Prevent default full reload when using absolute hashes like /#cv
+                        if (linkEl.getAttribute('href') && linkEl.getAttribute('href').startsWith('/#')) {
+                            e.preventDefault();
+                        }
+                        const targetEl = document.getElementById(link.target);
+                        if (targetEl && typeof targetEl.scrollIntoView === 'function') {
+                            targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                        // Set active immediately on click to reflect intent
                         setActive(linkEl);
+                        history.replaceState(null, '', `#${link.target}`);
                     });
                 }
             });
             
             // Expose reinitialize function globally
             window.reinitializeScrollspy = function() {
-                // Re-observe all sections in case new content was added
-                sectionMap.forEach((_, sectionEl) => {
-                    observer.unobserve(sectionEl);
-                    observer.observe(sectionEl);
-                });
+                // Rebuild sections list (for dynamically added content)
+                updateActiveByScroll();
             };
             
             // Initialize mobile menu functionality after sidebar is loaded
