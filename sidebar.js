@@ -14,29 +14,48 @@ document.addEventListener('DOMContentLoaded', function() {
             sidebar.innerHTML = html;
             console.log('Sidebar innerHTML set, current content:', sidebar.innerHTML);
             
-            // Set active page based on current URL
-            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-            let activeId = '';
-            
-            if (currentPage === '' || currentPage === 'index.html') {
-                activeId = 'nav-about';
-            } else if (currentPage === 'cv.html') {
-                activeId = 'nav-cv';
-            } else if (currentPage === 'science_writing.html') {
-                activeId = 'nav-science';
-            } else if (currentPage === 'repositories.html') {
-                activeId = 'nav-repos';
-            } else if (currentPage === 'funstuff.html') {
-                activeId = 'nav-fun';
+            // Scrollspy for single page sections
+            const links = [
+                { id: 'nav-about', target: 'about' },
+                { id: 'nav-repos', target: 'repos' },
+                { id: 'nav-cv', target: 'cv' },
+                { id: 'nav-science', target: 'science' },
+                { id: 'nav-fun', target: 'fun' }
+            ];
+
+            const sectionMap = new Map();
+            links.forEach(l => {
+                const el = document.getElementById(l.target);
+                const linkEl = document.getElementById(l.id);
+                if (el && linkEl) sectionMap.set(el, linkEl);
+            });
+
+            function setActive(linkEl) {
+                sidebar.querySelectorAll('a').forEach(a => a.classList.remove('active'));
+                if (linkEl) linkEl.classList.add('active');
             }
-            
-            // Add active class to current page
-            if (activeId) {
-                const activeLink = document.getElementById(activeId);
-                if (activeLink) {
-                    activeLink.classList.add('active');
-                }
+
+            // Initial active based on hash
+            if (window.location.hash) {
+                const target = window.location.hash.replace('#', '');
+                const pair = links.find(l => l.target === target);
+                if (pair) setActive(document.getElementById(pair.id));
+            } else {
+                setActive(document.getElementById('nav-about'));
             }
+
+            // Observe sections
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    const linkEl = sectionMap.get(entry.target);
+                    if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+                        setActive(linkEl);
+                        history.replaceState(null, '', `#${entry.target.id}`);
+                    }
+                });
+            }, { rootMargin: '0px 0px -40% 0px', threshold: [0.5] });
+
+            sectionMap.forEach((_, sectionEl) => observer.observe(sectionEl));
             
             // Initialize mobile menu functionality after sidebar is loaded
             initializeMobileMenu();
