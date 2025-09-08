@@ -402,6 +402,11 @@ function renderCV() {
     console.log('CV rendered successfully');
     console.log('Container now contains:', container.innerHTML.length, 'characters');
     console.log('Rendered sections:', CV_DATA.filter(s => s && s.title).map(s => s.title));
+    
+    // Reinitialize scrollspy after CV content is loaded
+    if (window.reinitializeScrollspy) {
+        window.reinitializeScrollspy();
+    }
 }
 
 // Load CV when page loads, but wait a bit for sidebar to load first

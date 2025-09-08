@@ -57,6 +57,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
             sectionMap.forEach((_, sectionEl) => observer.observe(sectionEl));
             
+            // Add click handlers to sidebar links for immediate active state
+            links.forEach(link => {
+                const linkEl = document.getElementById(link.id);
+                if (linkEl) {
+                    linkEl.addEventListener('click', function(e) {
+                        // Set active immediately on click
+                        setActive(linkEl);
+                    });
+                }
+            });
+            
+            // Expose reinitialize function globally
+            window.reinitializeScrollspy = function() {
+                // Re-observe all sections in case new content was added
+                sectionMap.forEach((_, sectionEl) => {
+                    observer.unobserve(sectionEl);
+                    observer.observe(sectionEl);
+                });
+            };
+            
             // Initialize mobile menu functionality after sidebar is loaded
             initializeMobileMenu();
         })
