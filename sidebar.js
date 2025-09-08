@@ -48,12 +48,12 @@ document.addEventListener('DOMContentLoaded', function() {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     const linkEl = sectionMap.get(entry.target);
-                    if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+                    if (entry.isIntersecting && entry.intersectionRatio > 0.3) {
                         setActive(linkEl);
                         history.replaceState(null, '', `#${entry.target.id}`);
                     }
                 });
-            }, { rootMargin: '0px 0px -40% 0px', threshold: [0.5] });
+            }, { rootMargin: '0px 0px -20% 0px', threshold: [0.3, 0.5, 0.7] });
 
             sectionMap.forEach((_, sectionEl) => observer.observe(sectionEl));
             
