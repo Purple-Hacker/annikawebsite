@@ -68,7 +68,7 @@ const CV_DATA = [
                 year: "2017-2021",
                 description: [
                     "GPA 3.6/4.0 (UK 2:1 equivalent)",
-                    "Undergraduate Thesis Title Correlating mapped nuclear dust with AGN obscuration",
+                    "Undergraduate Thesis Title: Correlating mapped nuclear dust with AGN obscuration",
                     "Modules including Astrostatistics and Data Mining; Scientific Computing in Astrophysics; Research Methods in Astrophysics; Exoplanets and Data Science; Research semester in Fall 2020, studying dust around supermassive black holes"
                 ]
             },
@@ -151,7 +151,7 @@ const CV_DATA = [
         type: "time_table",
         contents: [
             {
-                title: 'Assessing the habitability and potential detectability of life on planets around M dwarfs​',
+                title: 'Assessing the habitability and potential detectability of life on planets around M dwarfs, Leverhulme Centre for Life in the Universe',
                 year: "2025",
                 description: "Viktoria Ellmies, Imre Kisvárdai, Michael Kreuziger, Akhil Kumar, Annika Salmi (equal contributions, alphabetical)"
             }]
