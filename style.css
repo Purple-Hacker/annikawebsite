@@ -176,6 +176,11 @@ div.content {
         min-height: auto;
         padding: 24px 0;
     }
+    
+    /* Push headers down on mobile to avoid hamburger menu overlap */
+    .content > section h1 {
+        margin-top: 10px;
+    }
 
     .mobile-menu-toggle {
         display: block !important;
