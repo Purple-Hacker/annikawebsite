@@ -507,3 +507,45 @@ div.content {
     color: #333;
 }
 
+/**Contact Section**/
+.contact-section {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.contact-icons {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.contact-icon {
+    font-size: 48px;
+    color: var(--theme-color);
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-icon:hover {
+    color: #4fafa6;
+    transform: scale(1.1);
+    text-decoration: none;
+}
+
+/* Mobile responsive for contact section */
+@media screen and (max-width: 700px) {
+    .contact-icons {
+        gap: 30px;
+    }
+    
+    .contact-icon {
+        font-size: 40px;
+    }
+}
+
