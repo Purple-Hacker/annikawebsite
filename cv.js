@@ -58,6 +58,7 @@ const CV_DATA = [
                 year: "2024-2025",
                 description: [
                     "Received distinction (highest mark possible)",
+                    "Elected Bateman Scholar",
                     "Thesis on simulating LIFE and HWO's future detections. Supervised by Professor Amy Bonsor",
                     "Modules including Planetary System Dynamics; Extrasolar Planets Atmospheres and Interiors"
                 ]
@@ -202,6 +203,7 @@ const CV_DATA = [
         title: "Honors and Awards",
         type: "list",
         contents: [
+            "Bateman Scholarship Fund (2024-2025)",
             "Mellon Forum fund (2021)",
             "Paul K. Richter and Evalyn E. Cook Richter Memorial Fund (2020, 2021)",
             "National Science Foundation funding to go to Antarctica (2016)"
