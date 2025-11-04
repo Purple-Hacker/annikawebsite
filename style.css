@@ -226,11 +226,11 @@ div.content {
 }
 
 .repo-card {
-    background: #f8f9fa;
+    background: #1c473f; /* light green outer */
     border-radius: 8px;
     padding: 15px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    border: 1px solid #e1e4e8;
+    border: 1px solid #1c473f;
 }
 
 .repo-card:hover {
@@ -305,11 +305,11 @@ div.content {
 }
 
 .cv-section {
-    background: #f8f9fa;
+    background: #1c473f; /* highlight green for CV group boxes */
     border-radius: 8px;
     padding: 20px;
     margin-bottom: 20px;
-    border: 1px solid #e1e4e8;
+    border: 1px solid #1c473f;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -334,7 +334,7 @@ div.content {
 .cv-entry {
     margin-bottom: 20px;
     padding: 15px;
-    background: white;
+    background: white; /* inner entries remain white for contrast */
     border-radius: 6px;
     border-left: 4px solid var(--theme-color);
 }
