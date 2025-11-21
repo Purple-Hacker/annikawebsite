@@ -311,6 +311,7 @@ div.content {
     margin-bottom: 20px;
     border: 1px solid #1c473f;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    color: white;
 }
 
 .cv-section:hover {
@@ -337,6 +338,7 @@ div.content {
     background: white; /* inner entries remain white for contrast */
     border-radius: 6px;
     border-left: 4px solid var(--theme-color);
+    color: #333;
 }
 
 .cv-entry-header {
