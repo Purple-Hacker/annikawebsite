@@ -172,40 +172,13 @@ const CV_DATA = [
     },
     {
         title: "Science Communication",
-        type: "time_table",
+        type: "list",
         contents: [
-            {
-                title: "TA, AI-Assisted Coding, taught by Dr. Alexis Shakas",
-                institution: "ETH",
-                year: "spring 2026",
-                description: []
-            },
-            {
-                title: "Institute of Astronomy science night volunteer",
-                institution: "Cambridge",
-                year: "2024-25",
-                description: []
-            },
-            {
-                title: "President (2018–2021), Starlab Planetarium Shows",
-                institution: "Yale",
-                year: "2017–21",
-                description: []
-            },
-            {
-                title: "Women in Natural Sciences blog",
-                institution: "ETH",
-                year: "present",
-                description: []
-            },
-            {
-                title: "SciTech Desk Writer, Yale Daily News",
-                institution: "Yale",
-                year: "2020-21",
-                description: [
-                    "Popular astronomy writing has also appeared in Matador Network and Study Breaks."
-                ]
-            }
+            "TA, AI-Assisted Coding (ETH, spring 2026) — course taught by Dr. Alexis Shakas",
+            "Institute of Astronomy science night volunteer (Cambridge, 2024-25)",
+            "President, Starlab Planetarium Shows (Yale, 2017-21)",
+            "Women in Natural Sciences blog (ETH, present)",
+            "SciTech Desk Writer, Yale Daily News (Yale, 2020-21); popular astronomy writing has also appeared in Matador Network and Study Breaks"
         ]
     },
     {
