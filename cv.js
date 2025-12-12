@@ -45,164 +45,95 @@ const CV_DATA = [
         type: "time_table",
         contents: [
             {
-                title: "PhD in Planetary Science",
+                title: "PhD student",
                 institution: "ETH Zurich",
-                year: "2025-present",
+                year: "Oct 2025 - present",
                 description: [
-                    "Working on carbon and sulfur cycles on exoplanets. Supervised by Professor Caroline Dorn, Porfessor Paul Tackley, and Professor Loic Pellisier."
+                    "Supervised by Professor Paul Tackley and Professor Caroline Dorn"
                 ]
             },
             {
                 title: "MPhil in Planetary Science and Life in the Universe",
-                institution: "University of Cambridge",
-                year: "2024-2025",
+                institution: "Trinity Hall, University of Cambridge",
+                year: "Oct 2024 - July 2025",
                 description: [
-                    "Received distinction (highest mark possible)",
-                    "Elected Bateman Scholar",
-                    "Thesis on simulating LIFE and HWO's future detections. Supervised by Professor Amy Bonsor",
-                    "Modules including Planetary System Dynamics; Extrasolar Planets Atmospheres and Interiors"
+                    "Mark: Distinction (highest mark possible); therefore elected a Bateman Scholar",
+                    "Thesis: Simulating LIFE and HWO's future detections. Supervised by Dr. Bonsor and Professor Shorttle",
+                    "Received an overall award for Excellence for the thesis.",
+                    "Modules including Planetary System Dynamics (part of Math Part III)"
                 ]
             },
             {
                 title: "Bachelor of Arts double major in Physics and Astronomy",
                 institution: "Yale University",
-                year: "2017-2021",
+                year: "Aug 2017 - Dec 2021",
                 description: [
-                    "GPA 3.6/4.0 (UK 2:1 equivalent)",
-                    "Undergraduate Thesis Title: Correlating mapped nuclear dust with AGN obscuration",
-                    "Modules including Astrostatistics and Data Mining; Scientific Computing in Astrophysics; Research Methods in Astrophysics; Exoplanets and Data Science; Research semester in Fall 2020, studying dust around supermassive black holes"
+                    "GPA: 3.6/4.0 (UK 2:1 equivalent); final two years 3.8/4.0",
+                    "Undergraduate Thesis Title: Correlating mapped nuclear dust with AGN obscuration. With Professor Urry",
+                    "Research semester in Fall 2020 with Professor Meg Urry, studying dust around supermassive black holes"
                 ]
             },
             {
                 title: "Physics of Life Summer Program",
                 institution: "Princeton University",
-                year: "2020",
+                year: "June 2020",
                 description: []
             }
         ]
     },
     {
-        title: "Experience",
+        title: "Work & Research Experience",
         type: "time_table",
         contents: [
             {
                 title: "Simulation Engineer",
                 institution: "Starfish Space",
-                year: "2022-2024",
+                year: "Seattle, Washington, Aug 2022 – June 2024",
                 description: [
-                    "Wrote the company tool that uses on-orbit data to find the current location of the satellite in orbit. Used this tool to determine physics simulation accuracy; found the simulation was already 95% accurate.",
-                    "Modeled low Earth orbit physics in a Basilisk physics simulation to solve for drag. Obtained a value for coefficient of drag lower than accepted literature value of 2.2.",
-                    "Added hot pixels, cosmic rays, and blurring to synthetic Blender satellite images to train the navigation model. Created thousands of images as part of this iterative process.",
-                    "Architected and wrote a pipeline to process and clean on-orbit data for ground analysis.",
-                    "Improved dynamics simulation model performance by 30%, by rewriting slow algorithms, by tailoring cloud tools, and changing build processes. Dynamics simulation is Python wrapping C++ code; contributed in both languages. Also improved simulation UI for everyone who interacted with the simulation."
+                    "Architected and wrote a pipeline to process and clean on-orbit data for ground analysis. Used this tool to determine physics simulation accuracy; found the simulation was already >95% accurate.",
+                    "Upgraded and enhanced simulated images to more effectively train the navigation convolutional neural network (CNN). Designed and led hardware camera testing to add noise to synthetic Blender images.",
+                    "Modeled low Earth orbit physics in a Basilisk physics simulation to solve for drag. Improved dynamics simulation model performance by 30%, by rewriting slow algorithms, by tailoring cloud tools, and changing build processes. Dynamics simulation is Python wrapping C++ code; contributed in both languages. Also improved simulation UI."
                 ]
             },
             {
                 title: "Research Assistant",
                 institution: "Urry Lab, Yale University",
-                year: "2020-2021",
+                year: "Sep 2020 – Dec 2021",
                 description: [
-                    "Mapped galaxy dust distributions of 109 galaxies with active galactic nuclei (AGN) to resolve whether whether dust obscured X-ray radiation from the AGN.",
-                    "Wrote an algorithm that combined infrared and optical Hubble images to illuminate the galactic dust.",
-                    "Established a GitHub package that when installed, creates attenuation (dust) maps of galaxies.",
+                    "Mapped galaxy dust distributions of 109 galaxies with active galactic nuclei (AGN) to resolve whether galactic dust obscured AGN X-ray radiation. Wrote an algorithm that combined infrared and optical Hubble images to illuminate the galactic dust; now a GitHub package.",
                     "Presented at a senior thesis Mellon Forum; funded by the Richter Memorial Fund."
                 ]
             },
             {
                 title: "Research Assistant",
                 institution: "Newburgh Lab, Yale University",
-                year: "2019-2020",
+                year: "Aug 2019 – Aug 2020",
                 description: [
-                    "Generated channel telescope frequency versus intensity graphs of well-known bright stars on the Canadian Hydrogen Intensity Mapping Experiment (CHIME) to find telescope accuracy. Found 5 frequency channels that were over- and under-measuring intensity; results calibrated telescope.",
+                    "Generated channel telescope frequency versus intensity graphs of well-known bright stars on the Canadian Hydrogen Intensity Mapping Experiment (CHIME) to find telescope accuracy. Found ~5 frequency channels that were over- and under-measuring intensity; results calibrated telescope.",
                     "Research done with Cedar supercomputer; funded by the Richter Memorial Fund."
                 ]
             },
             {
                 title: "Museum Assistant in Paleobotany",
                 institution: "Peabody Museum, Yale University",
-                year: "2018",
+                year: "Aug 2018 – Dec 2018",
                 description: []
             }
         ]
     },
     {
-        title: "Projects",
-        type: "time_table",
-        contents: [
-            {
-                title: '<a href="https://github.com/annikasalmi/mdwarf-habitability">mdwarf-habitability</a>',
-                year: "2024 (in progress)",
-                description: "Predict the number of habitable zone M-dwarf planetary atmospheres HWO and LIFE will see using an MCMC simulated planetary population. Recreated LIFE results and looked for how many planets HWO would find."
-            },
-            {
-                title: '<a href="https://github.com/annikasalmi/exo-venus-evolution">exo-venus-evolution</a>',
-                year: "2024 (in progress)",
-                description: "Model the evolution of \"exo-Venuses\" over their geological history, using Venus and exo-Venus data"
-            },
-            {
-                title: '<a href="https://github.com/annikasalmi/alignpy">alignpy</a>',
-                year: "2024 (in progress)",
-                description: "Built a tool that locally downloads FITS files of astronomical objects, specified by filter and catalog. Once they are downloaded, the image files can be aligned and plotted via addition, subtraction, or division"
-            }
-        ]
-    },
-
-    {
-        title: "Conference Posters",
-        type: "time_table",
-        contents: [
-            {
-                title: 'Assessing the habitability and potential detectability of life on planets around M dwarfs, Leverhulme Centre for Life in the Universe',
-                year: "2025",
-                description: "Viktoria Ellmies, Imre Kisvárdai, Michael Kreuziger, Akhil Kumar, Annika Salmi (equal contributions, alphabetical)"
-            }]
-    },
-    {
-        title: "Science Communication",
-        type: "time_table",
-        contents: [
-            {
-                title: "Science night volunteer",
-                institution: "Institute of Astronomy, University of Cambridge",
-                year: "2024",
-                description: []
-            },
-            {
-                title: "President",
-                institution: "Starlab, Yale University",
-                year: "2017-2021",
-                description: [
-                    "Write and present planetarium shows to New Haven students; teach Yale students to communicate science."
-                ]
-            },
-            {
-                title: "SciTech Desk Writer",
-                institution: "Yale Daily News",
-                year: "2020",
-                description: [
-                    "Astronomy popular science writing has also appeared in publications such as Matador Network, Study Breaks"
-                ]
-            },
-            {
-                title: "Docent",
-                institution: "Exploratorium Museum",
-                year: "2017",
-                description: [
-                    "Explained exhibits to visitors and ran public dissections in San Francisco's premier hands-on science museum."
-                ]
-            },
-            {
-                title: "Student",
-                institution: "Joint Antarctic Science Expedition",
-                year: "2016",
-                description: []
-            }
-        ]
-    },
-    {
-        title: "Honors and Awards",
+        title: "Papers & Posters",
         type: "list",
         contents: [
+            "<em>Revisiting TOI-4438 and TOI-442 planetary systems with new observations from SPIRou and TESS</em>, in prep.<br>J. Bell, G. Hébrard, E. Martioli, R. Díaz, L. de Almeida, R. Doyon, D. de Oliveira, A. L'Heureux, É. Artigau, L. Arnold, I. Boisse, X. Bonfils, A. Carmona, N. J. Cook, X. Delfosse, J.-F. Donati, <strong>A. Salmi</strong>, M. Valatsou",
+            "Conference poster: <em>Assessing the habitability and potential detectability of life on planets around M dwarfs</em>, Cambridge Life in the Universe Science Day (2025)<br>V. Ellmies, I. Kisvárdai, M. Kreuziger, A. Kumar, <strong>A. Salmi</strong> (equal contributions)"
+        ]
+    },
+    {
+        title: "Honors & Awards",
+        type: "list",
+        contents: [
+            "Planetary Sciences \"Thesis Excellence Award\" at Cambridge (2025)",
             "Bateman Scholarship Fund (2024-2025)",
             "Mellon Forum fund (2021)",
             "Paul K. Richter and Evalyn E. Cook Richter Memorial Fund (2020, 2021)",
@@ -210,22 +141,80 @@ const CV_DATA = [
         ]
     },
     {
-        title: "Academic Interests",
-        type: "nested_list",
+        title: "Technical Skills",
+        type: "list",
         contents: [
-            "Planetary interiors and atmospheres",
-            "Origin of life",
-            "Planetary system dynamics",
-            "Missions to solar system bodies"
+            "<strong>Skills:</strong> Cleaning and analyzing astronomical images, generating synthetic images, scientific and big data cloud computing, MCMC simulations, satellite orbit determination filtering algorithms, scientific writing",
+            "<strong>Languages:</strong> Python (6 years), Bash/Unix scripting (4 years), C++ (3 years), MATLAB (2 years), R (2 years), YAML (2 years)",
+            "<strong>Software tools:</strong> <em>Astronomy:</em> DS9, FITS, <em>Synthetic images:</em> Blender, cuda, <em>Aerospace:</em> Freeflyer, <em>Developer:</em> Linux, Git, Jira, VSCode, Cursor, <em>Cloud:</em> Google Cloud, Kubernetes, Docker"
         ]
     },
     {
-        title: "Other Interests",
+        title: "Repos",
+        type: "time_table",
+        contents: [
+            {
+                title: '<a href="https://github.com/annikasalmi/mdwarf-habitability">mdwarf-habitability</a>',
+                year: "2025",
+                description: "Predicted the number of habitable zone planets HWO and LIFE will detect using an MCMC simulated planetary population. LIFE found more planets than HWO, but HWO was more successful for G-type stars."
+            },
+            {
+                title: '<a href="https://github.com/annikasalmi/exo-venus-evolution">exo-venus-evolution</a>',
+                year: "2024, in progress",
+                description: "Model the evolution of \"exo-Venuses\" over their geological history, using Venus and exo-Venus data."
+            },
+            {
+                title: '<a href="https://github.com/annikasalmi/alignpy">alignpy</a>',
+                year: "2020",
+                description: "Built a tool that locally downloads FITS files of astronomical objects, specified by filter and catalog. Once they are downloaded, the image files can be aligned and plotted via addition, subtraction, or division"
+            }
+        ]
+    },
+    {
+        title: "Science Communication",
+        type: "time_table",
+        contents: [
+            {
+                title: "TA, AI-Assisted Coding",
+                institution: "ETH",
+                year: "spring 2026",
+                description: []
+            },
+            {
+                title: "Institute of Astronomy science night volunteer",
+                institution: "Cambridge",
+                year: "2024-25",
+                description: []
+            },
+            {
+                title: "President (2018–2021), Starlab Planetarium Shows",
+                institution: "Yale",
+                year: "2017–21",
+                description: []
+            },
+            {
+                title: "Women in Natural Sciences blog",
+                institution: "ETH",
+                year: "present",
+                description: []
+            },
+            {
+                title: "SciTech Desk Writer, Yale Daily News",
+                institution: "Yale",
+                year: "2020-21",
+                description: [
+                    "Popular astronomy writing has also appeared in Matador Network and Study Breaks."
+                ]
+            }
+        ]
+    },
+    {
+        title: "Activities",
         type: "list",
         contents: [
-            'Ski mountaineering',
-            'Climbing',
-            'Reading (<a href="https://www.goodreads.com/annikasalmi">Goodreads</a>)'
+            "Yale Free & Alpine Ski Team, Captain 2019-2020 (Yale, 2017-21)",
+            "<strong>Languages:</strong> English (native), Spanish (advanced), French (intermediate)",
+            "<strong>Dual citizen of USA and Finland; Swiss resident.</strong>"
         ]
     }
 ];
@@ -251,14 +240,20 @@ function renderTimeTable(contents) {
         const title = entry.title || 'Untitled';
         html += `<h4 class="cv-entry-title">${renderHtml(title)}</h4>`;
         
-        // Safe institution rendering
+        // Combine institution and year in the gray box
+        let yearBoxContent = '';
         if (entry.institution && typeof entry.institution === 'string' && entry.institution.trim()) {
-            html += `<div class="cv-entry-institution">${escapeHtml(entry.institution)}</div>`;
+            yearBoxContent = escapeHtml(entry.institution);
         }
-        
-        // Safe year rendering
         if (entry.year && (typeof entry.year === 'string' || typeof entry.year === 'number')) {
-            html += `<div class="cv-entry-year">${escapeHtml(String(entry.year))}</div>`;
+            if (yearBoxContent) {
+                yearBoxContent += ', ' + escapeHtml(String(entry.year));
+            } else {
+                yearBoxContent = escapeHtml(String(entry.year));
+            }
+        }
+        if (yearBoxContent) {
+            html += `<div class="cv-entry-year">${yearBoxContent}</div>`;
         }
         
         html += '</div>';
