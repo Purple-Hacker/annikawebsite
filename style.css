@@ -120,6 +120,11 @@ h3{
 .cv-subnav {
     padding-left: 20px;
     background: rgba(255, 255, 255, 0.03);
+    display: none;
+}
+
+.cv-subnav.open {
+    display: block;
 }
 
 .cv-subnav a {
@@ -299,7 +304,7 @@ div.content {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    font-size: 12px;
+    font-size: 10px;
     color: #cfe8e2;
 }
 

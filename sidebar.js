@@ -17,8 +17,9 @@ document.addEventListener('DOMContentLoaded', function() {
             // Scrollspy for single page sections
             const links = [
                 { id: 'nav-about', target: 'about' },
-                { id: 'nav-repos', target: 'repos' },
                 { id: 'nav-cv', target: 'cv' },
+                { id: 'nav-papers', target: 'cv-papers-posters' },
+                { id: 'nav-repos', target: 'repos' },
                 { id: 'nav-science', target: 'science' },
                 { id: 'nav-fun', target: 'fun' }
             ];
@@ -91,6 +92,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 const linkEl = document.getElementById(link.id);
                 if (linkEl) {
                     linkEl.addEventListener('click', function(e) {
+                        // Toggle CV dropdown when clicking the CV parent link
+                        if (link.id === 'nav-cv') {
+                            const subnav = document.querySelector('.cv-subnav');
+                            if (subnav) {
+                                e.preventDefault();
+                                subnav.classList.toggle('open');
+                                linkEl.setAttribute('aria-expanded', subnav.classList.contains('open'));
+                                return;
+                            }
+                        }
                         // Prevent default full reload when using absolute hashes like /#cv
                         if (linkEl.getAttribute('href') && linkEl.getAttribute('href').startsWith('/#')) {
                             e.preventDefault();

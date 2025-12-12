@@ -139,27 +139,6 @@ const CV_DATA = [
         ]
     },
     {
-        title: "Repos",
-        type: "time_table",
-        contents: [
-            {
-                title: '<a href="https://github.com/annikasalmi/mdwarf-habitability">mdwarf-habitability</a>',
-                year: "2025",
-                description: "Predicted the number of habitable zone planets HWO and LIFE will detect using an MCMC simulated planetary population. LIFE found more planets than HWO, but HWO was more successful for G-type stars."
-            },
-            {
-                title: '<a href="https://github.com/annikasalmi/exo-venus-evolution">exo-venus-evolution</a>',
-                year: "2024, in progress",
-                description: "Model the evolution of \"exo-Venuses\" over their geological history, using Venus and exo-Venus data."
-            },
-            {
-                title: '<a href="https://github.com/annikasalmi/alignpy">alignpy</a>',
-                year: "2020",
-                description: "Built a tool that locally downloads FITS files of astronomical objects, specified by filter and catalog. Once they are downloaded, the image files can be aligned and plotted via addition, subtraction, or division"
-            }
-        ]
-    },
-    {
         title: "Technical Skills",
         type: "boxed_list",
         contents: [
