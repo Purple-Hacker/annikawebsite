@@ -131,14 +131,6 @@ const CV_DATA = [
         ]
     },
     {
-        title: "Papers & Posters",
-        type: "list",
-        contents: [
-            "<em>Revisiting TOI-4438 and TOI-442 planetary systems with new observations from SPIRou and TESS</em>, in prep.<br>J. Bell, G. Hébrard, E. Martioli, R. Díaz, L. de Almeida, R. Doyon, D. de Oliveira, A. L'Heureux, É. Artigau, L. Arnold, I. Boisse, X. Bonfils, A. Carmona, N. J. Cook, X. Delfosse, J.-F. Donati, <strong>A. Salmi</strong>, M. Valatsou",
-            "Conference poster: <em>Assessing the habitability and potential detectability of life on planets around M dwarfs</em>, Cambridge Life in the Universe Science Day (2025)<br>V. Ellmies, I. Kisvárdai, M. Kreuziger, A. Kumar, <strong>A. Salmi</strong> (equal contributions)"
-        ]
-    },
-    {
         title: "Technical Skills",
         type: "boxed_list",
         contents: [
@@ -167,6 +159,12 @@ const CV_DATA = [
             "<strong>Dual citizen of USA and Finland; Swiss resident.</strong>"
         ]
     }
+];
+
+// Papers & Posters content (now rendered outside CV)
+const PAPERS_CONTENT = [
+    "<em>Revisiting TOI-4438 and TOI-442 planetary systems with new observations from SPIRou and TESS</em>, in prep.<br>J. Bell, G. Hébrard, E. Martioli, R. Díaz, L. de Almeida, R. Doyon, D. de Oliveira, A. L'Heureux, É. Artigau, L. Arnold, I. Boisse, X. Bonfils, A. Carmona, N. J. Cook, X. Delfosse, J.-F. Donati, <strong>A. Salmi</strong>, M. Valatsou",
+    "Conference poster: <em>Assessing the habitability and potential detectability of life on planets around M dwarfs</em>, Cambridge Life in the Universe Science Day (2025)<br>V. Ellmies, I. Kisvárdai, M. Kreuziger, A. Kumar, <strong>A. Salmi</strong> (equal contributions)"
 ];
 
 // Function to render time table entries
@@ -284,6 +282,14 @@ function renderNestedList(contents) {
     return `<ul class="cv-nested-list">${validItems.map(item => `<li>${renderHtml(item)}</li>`).join('')}</ul>`;
 }
 
+// Render Papers & Posters as standalone section
+function renderPapers() {
+    const container = document.getElementById('papers-content');
+    if (!container) return;
+    const html = renderList(PAPERS_CONTENT);
+    container.innerHTML = html || '<div class="cv-error">No papers to display.</div>';
+}
+
 // Function to render CV content
 function renderCV() {
     const container = document.getElementById('cv-content');
@@ -381,6 +387,9 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM Content Loaded');
     console.log('CV_DATA length:', CV_DATA.length);
     console.log('CV_DATA first section:', CV_DATA[0]);
+    
+    // Render Papers & Posters standalone section
+    renderPapers();
     
     // Try to render immediately first
     console.log('Attempting immediate render');

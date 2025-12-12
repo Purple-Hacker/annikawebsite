@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const links = [
                 { id: 'nav-about', target: 'about' },
                 { id: 'nav-cv', target: 'cv' },
-                { id: 'nav-papers', target: 'cv-papers-posters' },
+                { id: 'nav-papers', target: 'papers' },
                 { id: 'nav-repos', target: 'repos' },
                 { id: 'nav-science', target: 'science' },
                 { id: 'nav-fun', target: 'fun' }
