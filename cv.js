@@ -175,7 +175,7 @@ const CV_DATA = [
         type: "time_table",
         contents: [
             {
-                title: "TA, AI-Assisted Coding",
+                title: "TA, AI-Assisted Coding, taught by Dr. Alexis Shakas",
                 institution: "ETH",
                 year: "spring 2026",
                 description: []
