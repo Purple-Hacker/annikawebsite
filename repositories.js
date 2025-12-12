@@ -40,19 +40,40 @@ function createRepoCard(repo) {
     const updatedText = updated ? `<span class="repo-updated">Updated ${updated}</span>` : '';
     const repoUrl = repo.html_url || `https://github.com/${GITHUB_USERNAME}/${name}`;
 
+    const lightTheme = 'default';
+    const darkTheme = 'dark';
+    const pinParams = `username=${GITHUB_USERNAME}&repo=${name}&theme=THEME&show_owner=false&description_lines_count=2`;
+
     return `
         <div class="repo-card">
             <a href="${repoUrl}" target="_blank" rel="noopener noreferrer">
-                <div class="repo-card-header">
-                    <h3 class="repo-title">${escapeHtml(name)}</h3>
-                    ${repo.private ? '<span class="repo-badge">Private</span>' : ''}
+                <div class="repo-image-wrapper">
+                    <img
+                        class="repo-image light-theme"
+                        alt="${escapeHtml(name)}"
+                        src="https://github-readme-stats.vercel.app/api/pin/?${pinParams.replace('THEME', lightTheme)}"
+                        onerror="this.closest('.repo-card').classList.add('repo-text-mode')"
+                    >
+                    <img
+                        class="repo-image dark-theme"
+                        alt="${escapeHtml(name)}"
+                        src="https://github-readme-stats.vercel.app/api/pin/?${pinParams.replace('THEME', darkTheme)}"
+                        onerror="this.closest('.repo-card').classList.add('repo-text-mode')"
+                    >
                 </div>
-                <p class="repo-description">${description}</p>
-                <div class="repo-meta">
-                    ${language}
-                    ${stars}
-                    ${forks}
-                    ${updatedText}
+                <div class="repo-fallback">
+                    <div class="repo-card-header">
+                        <h3 class="repo-title">${escapeHtml(name)}</h3>
+                        ${repo.private ? '<span class="repo-badge">Private</span>' : ''}
+                    </div>
+                    <p class="repo-description">${description}</p>
+                    <div class="repo-meta">
+                        ${language}
+                        ${stars}
+                        ${forks}
+                        ${updatedText}
+                    </div>
+                    <div class="repo-cta">Open on GitHub</div>
                 </div>
             </a>
         </div>

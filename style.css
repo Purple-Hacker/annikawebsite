@@ -117,6 +117,22 @@ h3{
     color: white;
 }
 
+.cv-subnav {
+    padding-left: 20px;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.cv-subnav a {
+    font-size: 18px;
+    padding: 10px 16px;
+    color: rgb(180, 180, 180);
+}
+
+.cv-subnav a:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+}
+
 div.content {
     margin-left: 305px;
     padding: 1px 16px;
@@ -231,6 +247,7 @@ div.content {
     color: white;
     font-size: 16px; /* align with CV bullet text */
     line-height: 1.45;
+    overflow: hidden;
 }
 
 .repo-card:hover {
@@ -241,6 +258,10 @@ div.content {
 .repo-card a {
     text-decoration: none;
     color: inherit;
+    display: block;
+}
+
+.repo-image-wrapper {
     display: block;
 }
 
@@ -278,8 +299,21 @@ div.content {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    font-size: 15px;
+    font-size: 14px;
     color: #cfe8e2;
+}
+
+.repo-cta {
+    margin-top: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: #e9f6f2;
+    font-size: 14px;
 }
 
 .repo-language {
@@ -308,6 +342,18 @@ div.content {
     color: #666;
     font-size: 16px;
     margin: 8px 0;
+}
+
+.repo-fallback {
+    display: none;
+}
+
+.repo-text-mode .repo-image-wrapper {
+    display: none;
+}
+
+.repo-text-mode .repo-fallback {
+    display: block;
 }
 
 .repo-image {
@@ -467,6 +513,25 @@ div.content {
 .cv-section .cv-list li,
 .cv-section .cv-nested-list li {
     color: white;
+}
+
+/* Boxed list items (used for Technical Skills) */
+.cv-box-list {
+    display: grid;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+}
+
+.cv-box-item {
+    background: white;
+    color: #333;
+    border-radius: 6px;
+    padding: 12px 14px;
+    border-left: 4px solid var(--theme-color);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 .cv-entry a {

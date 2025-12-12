@@ -38,6 +38,15 @@ function renderHtml(text) {
     return safeHtml;
 }
 
+function slugify(text) {
+    if (!text || typeof text !== 'string') return '';
+    return text
+        .toLowerCase()
+        .replace(/[^a-z0-9\s-]/g, '')
+        .trim()
+        .replace(/\s+/g, '-');
+}
+
 // CV data structure
 const CV_DATA = [
     {
@@ -130,26 +139,6 @@ const CV_DATA = [
         ]
     },
     {
-        title: "Honors & Awards",
-        type: "list",
-        contents: [
-            "Planetary Sciences \"Thesis Excellence Award\" at Cambridge (2025)",
-            "Bateman Scholarship Fund (2024-2025)",
-            "Mellon Forum fund (2021)",
-            "Paul K. Richter and Evalyn E. Cook Richter Memorial Fund (2020, 2021)",
-            "National Science Foundation funding to go to Antarctica (2016)"
-        ]
-    },
-    {
-        title: "Technical Skills",
-        type: "list",
-        contents: [
-            "<strong>Skills:</strong> Cleaning and analyzing astronomical images, generating synthetic images, scientific and big data cloud computing, MCMC simulations, satellite orbit determination filtering algorithms, scientific writing",
-            "<strong>Languages:</strong> Python (6 years), Bash/Unix scripting (4 years), C++ (3 years), MATLAB (2 years), R (2 years), YAML (2 years)",
-            "<strong>Software tools:</strong> <em>Astronomy:</em> DS9, FITS, <em>Synthetic images:</em> Blender, cuda, <em>Aerospace:</em> Freeflyer, <em>Developer:</em> Linux, Git, Jira, VSCode, Cursor, <em>Cloud:</em> Google Cloud, Kubernetes, Docker"
-        ]
-    },
-    {
         title: "Repos",
         type: "time_table",
         contents: [
@@ -171,8 +160,17 @@ const CV_DATA = [
         ]
     },
     {
+        title: "Technical Skills",
+        type: "boxed_list",
+        contents: [
+            "<strong>Skills:</strong> Cleaning and analyzing astronomical images, generating synthetic images, scientific and big data cloud computing, MCMC simulations, satellite orbit determination filtering algorithms, scientific writing",
+            "<strong>Languages:</strong> Python (6 years), Bash/Unix scripting (4 years), C++ (3 years), MATLAB (2 years), R (2 years), YAML (2 years)",
+            "<strong>Software tools:</strong> <em>Astronomy:</em> DS9, FITS, <em>Synthetic images:</em> Blender, cuda, <em>Aerospace:</em> Freeflyer, <em>Developer:</em> Linux, Git, Jira, VSCode, Cursor, <em>Cloud:</em> Google Cloud, Kubernetes, Docker"
+        ]
+    },
+    {
         title: "Science Communication",
-        type: "list",
+        type: "boxed_list",
         contents: [
             "TA, AI-Assisted Coding (ETH, spring 2026) — course taught by Dr. Alexis Shakas",
             "Institute of Astronomy science night volunteer (Cambridge, 2024-25)",
@@ -277,6 +275,21 @@ function renderList(contents) {
     return `<ul class="cv-list">${validItems.map(item => `<li>${renderHtml(item)}</li>`).join('')}</ul>`;
 }
 
+// Function to render boxed list entries (each item in its own card)
+function renderBoxedList(contents) {
+    if (!Array.isArray(contents)) {
+        console.warn('renderBoxedList: contents is not an array:', contents);
+        return '';
+    }
+
+    const validItems = contents.filter(item => item && typeof item === 'string' && item.trim());
+    if (validItems.length === 0) {
+        return '';
+    }
+
+    return `<div class="cv-box-list">${validItems.map(item => `<div class="cv-box-item">${renderHtml(item)}</div>`).join('')}</div>`;
+}
+
 // Function to render nested list entries
 function renderNestedList(contents) {
     if (!Array.isArray(contents)) {
@@ -323,7 +336,9 @@ function renderCV() {
             return '';
         }
         
-        let html = '<div class="cv-section">';
+        const sectionId = `cv-${slugify(section.title) || 'section-' + index}`;
+        
+        let html = `<div class="cv-section" id="${sectionId}">`;
         html += `<h3 class="cv-section-title">${escapeHtml(section.title)}</h3>`;
         html += '<div class="cv-section-content">';
         
@@ -334,6 +349,9 @@ function renderCV() {
                     break;
                 case 'list':
                     html += renderList(section.contents);
+                    break;
+                case 'boxed_list':
+                    html += renderBoxedList(section.contents);
                     break;
                 case 'nested_list':
                     html += renderNestedList(section.contents);
