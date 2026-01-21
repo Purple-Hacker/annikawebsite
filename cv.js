@@ -164,7 +164,8 @@ const CV_DATA = [
 // Papers & Posters content (now rendered outside CV)
 const PAPERS_CONTENT = [
     "<em>Revisiting TOI-4438 and TOI-442 planetary systems with new observations from SPIRou and TESS</em>, in prep.<br>J. Bell, G. Hébrard, E. Martioli, R. Díaz, L. de Almeida, R. Doyon, D. de Oliveira, A. L'Heureux, É. Artigau, L. Arnold, I. Boisse, X. Bonfils, A. Carmona, N. J. Cook, X. Delfosse, J.-F. Donati, <strong>A. Salmi</strong>, M. Valatsou",
-    "Conference poster: <em>Assessing the habitability and potential detectability of life on planets around M dwarfs</em>, Cambridge Life in the Universe Science Day (2025)<br>V. Ellmies, I. Kisvárdai, M. Kreuziger, A. Kumar, <strong>A. Salmi</strong> (equal contributions)"
+    "The GAPS Programme at TNG⋆<br>TBD. Confirmation of the hot sub-Neptune TOI-4602 b (HD 25295 b), a transitional planet key target for future atmospheric characterization<br>C. Di Maio1, S. Benatti1, D. Locci1, R. Spinelli1, M. Baratella2, K. Biazzo3, J. Maldonado1, C. Dorn4, P. E. Cubillos5, 6, A. Salmi4, A. Maggio1, L. Naponiello6, A. F. Lanza7, F. Marzari8, L. Malavolta8, 9, M. Damasso6, T. Zingales8, 9, A. Sozzetti6",
+    "Conference poster: <em>Assessing the habitability and potential detectability of life on planets around M dwarfs</em>, Cambridge Life in the Universe Science Day (2025)<br>V. Ellmies, I. Kisvárdai, M. Kreuziger, A. Kumar, <strong>A. Salmi</strong> (equal contributions)",
 ];
 
 // Function to render time table entries
