@@ -1,0 +1,465 @@
+\documentclass[10pt,letterpaper]{article}
+
+% --------------------------------------------------
+% Packages
+% --------------------------------------------------
+
+\usepackage[
+    ignoreheadfoot,
+    top=2cm,
+    bottom=2cm,
+    left=2cm,
+    right=2cm,
+    footskip=1cm
+]{geometry}
+
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{amsmath}
+\usepackage[
+    pdftitle={Annika Salmi's CV},
+    pdfauthor={Annika Salmi},
+    pdfcreator={LaTeX with RenderCV},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref}
+\usepackage[pscoord]{eso-pic}
+\usepackage{calc}
+\usepackage{bookmark}
+\usepackage{lastpage}
+\usepackage{changepage}
+\usepackage{paracol}
+\usepackage{ifthen}
+\usepackage{needspace}
+\usepackage{iftex}
+
+\definecolor{primaryColor}{RGB}{0,79,144}
+
+% --------------------------------------------------
+% PDF / ATS compatibility
+% --------------------------------------------------
+
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+% --------------------------------------------------
+% Global settings
+% --------------------------------------------------
+
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\columnsep}{0cm}
+
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt}
+
+% --------------------------------------------------
+% Section formatting
+% --------------------------------------------------
+
+\titleformat{\section}
+    {\needspace{2\baselineskip}\bfseries\large}
+    {}
+    {0pt}
+    {}
+    [\vspace{1pt}\titlerule]
+
+\titlespacing{\section}{-1pt}{0.3cm}{0.1cm}
+
+% --------------------------------------------------
+% Custom environments
+% --------------------------------------------------
+
+\renewcommand\labelitemi{$\circ$}
+
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.1cm,
+        parsep=0.1cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=0.4cm + 10pt
+    ]
+}{
+    \end{itemize}
+}
+
+\newenvironment{highlightsforbulletentries}{
+    \begin{itemize}[
+        topsep=0.1cm,
+        parsep=0.1cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=10pt
+    ]
+}{
+    \end{itemize}
+}
+
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{0.1cm + 0.00001cm}{0.1cm + 0.00001cm}
+}{
+    \end{adjustwidth}
+}
+
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill,4.5cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}
+    \par\kern\topsep
+    \raggedright
+    \linespread{1.5}
+}{
+    \par\kern\topsep
+}
+
+% --------------------------------------------------
+% Link handling
+% --------------------------------------------------
+
+\let\hrefWithoutArrow\href
+\renewcommand{\href}[2]{%
+    \hrefWithoutArrow{#1}{%
+        \ifthenelse{\equal{#2}{}}{}{#2 }%
+        \raisebox{.15ex}{\footnotesize\faExternalLink*}%
+    }%
+}
+
+% --------------------------------------------------
+% Document
+% --------------------------------------------------
+
+\begin{document}
+
+\newcommand{\AND}{%
+    \unskip
+    \cleaders\copy\ANDbox\hskip\wd\ANDbox
+    \ignorespaces
+}
+\newsavebox\ANDbox
+\sbox\ANDbox{}
+
+\begin{header}
+    \textbf{\fontsize{20pt}{20pt}\selectfont Annika Salmi}
+
+    \vspace{0.1cm}
+
+    \begin{onecolentry}
+        PhD student at ETH Zurich in two departments, Physics and Earth \& Planetary Sciences. Currently modeling carbon and sulfur cycles on temperate super-Earths and sub-Neptunes; generally interested in simulations, missions, and dyanmics.
+    \end{onecolentry}
+
+    \normalsize
+
+    \mbox{\hrefWithoutArrow{mailto:asalmi@phys.ethz.ch}{\color{black}{\footnotesize\faEnvelope[regular]}\hspace*{0.13cm}asalmi@phys.ethz.ch}}%
+    \kern0.15cm \AND \kern0.15cm%
+    \mbox{\hrefWithoutArrow{https://annikasalmi.com/}{\color{black}{\footnotesize\faLink}\hspace*{0.13cm}annikasalmi.com}}%
+    \kern0.15cm \AND \kern0.15cm%
+    \mbox{\hrefWithoutArrow{https://linkedin.com/in/annikasalmi}{\color{black}{\footnotesize\faLinkedinIn}\hspace*{0.13cm}annikasalmi}}%
+    \kern0.15cm \AND \kern0.15cm%
+    \mbox{\hrefWithoutArrow{https://github.com/annikasalmi}{\color{black}{\footnotesize\faGithub}\hspace*{0.13cm}annikasalmi}}%
+\end{header}
+
+\vspace{0cm}
+
+% EDUCATION 
+
+    \section{Education}
+
+        \begin{twocolentry}{
+        \textit{Oct 2025 - present}}
+            \textbf{ETH Zurich}
+        \end{twocolentry} \begin{twocolentry}{
+        \textit{}}
+            \textit{PhD student}
+        \end{twocolentry}
+        \begin{onecolentry}
+        \begin{highlights}
+            \item Supervised by Professor Paul Tackley and Professor Caroline Dorn
+        \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.20 cm}
+        \begin{twocolentry}{
+        \textit{Oct 2024 - July 2025}}
+            \textbf{Trinity Hall, University of Cambridge}
+        \end{twocolentry} \begin{twocolentry}{
+        \textit{}}
+            \textit{MPhil in Planetary Science and Life in the Universe}
+        \end{twocolentry}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Mark: Distinction (highest mark possible); chosen as a Bateman Scholar
+                \item Thesis: Simulating LIFE and HWO's future detections. Supervised by Dr. Bonsor and Professor Shorttle
+                \item Received an overall award for Excellence for the thesis. 
+                \item Modules including Planetary System Dynamics (part of Math Part III)
+
+            \end{highlights}
+        \end{onecolentry}
+        \vspace{0.20 cm}
+        
+        \begin{twocolentry}{
+        \textit{Aug 2017 - Dec 2021}}
+            \textbf{Yale University}
+        \end{twocolentry} \begin{twocolentry}{
+        \textit{}}
+            \textit{Bachelor of Arts double major in Physics and Astronomy}
+        \end{twocolentry}
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item GPA: 3.6/4.0 (UK 2:1 equivalent); final two years 3.8/4.0
+                \item Thesis: Correlating mapped nuclear dust with AGN obscuration. Supervised by Professor Urry
+                \item Research semester in Fall 2020 with Professor Meg Urry, studying dust around supermassive black holes
+            \end{highlights}
+        \end{onecolentry}
+        \vspace{0.20 cm}
+        
+        \begin{twocolentry}{
+        \textit{June 2020}}
+            \textbf{Princeton University - Physics of Life Summer Program}
+        \end{twocolentry}
+
+% WORK AND RESEARCH
+    
+    \section{Work \& Research Experience}    
+        \begin{twocolentry}{
+        \textit{Seattle, Washington}   
+        
+        \textit{Aug 2022 – June 2024}}
+            \textbf{Simulation Engineer}
+            
+            \textit{Starfish Space}
+        \end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Architected and wrote a pipeline to process and clean on-orbit data for ground analysis. Used this tool to determine physics simulation accuracy; found the simulation was already \>95\% accurate. 
+                \item Upgraded and enhanced simulated images to more effectively train the navigation convolutional neural network (CNN). Designed and led hardware camera testing to add noise to synthetic Blender  images. 
+                \item Modeled low Earth orbit physics in a Basilisk physics simulation to solve for drag. Improved dynamics simulation model performance by 30\%, by rewriting slow algorithms, by tailoring cloud tools, and changing build processes. Dynamics simulation is Python wrapping C++ code; contributed in both languages.
+            \end{highlights}
+        \end{onecolentry}
+
+
+        \vspace{0.2 cm}
+
+        \begin{twocolentry}{
+        \textit{Yale University}    
+            
+        \textit{Sep 2020 – Dec 2021}}
+            \textbf{Research Assistant}
+            
+            \textit{Urry Lab}
+        \end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Mapped galaxy dust distributions of 109 galaxies with active galactic nuclei (AGN) to resolve whether galactic dust obscured AGN X-ray radiation. Wrote an algorithm that combined infrared and optical Hubble images to illuminate the galactic dust; now a GitHub package. Funded by the Richter Memorial Fund.
+
+            \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.2 cm}
+
+        \begin{twocolentry}{
+        \textit{Yale University}    
+            
+        \textit{Aug 2019 – Aug 2020}}
+            \textbf{Research Assistant}
+            
+            \textit{Newburgh Lab}
+        \end{twocolentry}
+
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Generated intensity graphs of bright stars on CHIME experiment to determine accuracy; 
+                found ~5 frequency channels over- and under-measuring intensity. Funded by the Richter Memorial Fund.
+            \end{highlights}
+        \end{onecolentry}
+        
+% PAPERS
+
+    \section{Papers}
+        \begin{onecolentry}
+        \textit{Revisiting TOI-4438 and TOI-442 planetary systems with new
+observations from SPIRou and TESS}, submitted.
+        \newline
+        J. Bell, G. Hébrard, E. Martioli, R. Díaz, L. de Almeida, R. Doyon, D. de Oliveira, A. L'Heureux, É. Artigau, L. Arnold, I. Boisse, X. Bonfils, A. Carmona, N. J. Cook, X. Delfosse, J.-F. Donati, \textbf{A. Salmi}, M. Valatsou
+        \end{onecolentry}
+        \vspace{0.1cm}
+        \vspace{0.1cm}
+        \begin{onecolentry}
+        \textit{The GAPS Programme at TNG. TBD. Confirmation of the hot sub-Neptune TOI-4602 b (HD 25295 b), a transitional planet key target for future atmospheric characterization}, submitted.
+        \newline
+        C. Di Maio, S. Benatti, D. Locci, R. Spinelli, M. Baratella, K. Biazzo, J. Maldonado, A. F. Lanza, C. Dorn, P. E. Cubillos, \textbf{A. Salmi}, A. Maggio, L. Naponiello, F. Marzari, G. Micela, V. Fardella, L. Malavolta
+        \end{onecolentry}
+
+
+% AWARDS
+
+    \section{Honors \& Awards}
+        \begin{onecolentry}
+        Planetary Sciences ``Thesis Excellence Award" at Cambridge (2025)
+        \end{onecolentry}
+        \vspace{0.1 cm}
+        \begin{onecolentry}
+        Bateman Scholarship Fund (2024-2025)
+        \end{onecolentry}
+        \vspace{0.1 cm}
+        \begin{onecolentry}
+         Mellon Forum fund (2021)
+        \end{onecolentry}
+        \vspace{0.1 cm}
+        \begin{onecolentry}
+         Paul K. Richter and Evalyn E. Cook Richter Memorial Fund (2020, 2021)
+        \end{onecolentry}
+        \vspace{0.1 cm}
+        \begin{onecolentry}
+         National Science Foundation funding to go to Antarctica (2016)
+        \end{onecolentry}
+        
+% SKILLS
+
+    \section{Technical Skills}
+        \begin{onecolentry}
+            \textbf{Skills:} Cleaning and analyzing astronomical images, generating synthetic images, scientific and big data cloud computing, MCMC simulations, satellite orbit determination filtering algorithms, scientific writing 
+        \end{onecolentry}
+        
+        \vspace{0.2 cm}
+        \begin{onecolentry}
+            \textbf{Languages:} Python (7 years), Bash/Unix scripting (5 years), C++ (3 years), MATLAB (2 years), R (2 years)
+        \end{onecolentry}
+        
+        \vspace{0.2 cm}
+        \begin{onecolentry}
+            \textbf{Software tools:} \textit{Astronomy}: DS9, FITS, \textit{Synthetic images}: Blender, cuda, \textit{Aerospace}: Freeflyer, \textit{Developer}: Linux, Git, Jira, VSCode, Cursor, \textit{Cloud}: Google Cloud, Kubernetes, Docker
+
+        \end{onecolentry}
+
+% PROJECTS
+    
+    \section{Repos}
+    
+        \begin{twocolentry}{
+        {\textit{2026}}}
+            \textbf{\href{https://github.com/ExoInteriors/GlobalChemicalEquilibrium}{GlobalChemicalEquilibrium}} \textit{(contributor)}
+        \end{twocolentry}
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item A high-performance numerical framework designed to simulate the multi-phase chemical interactions between a planet's atmosphere, magma ocean, and metallic core.
+            \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.20 cm}
+
+        \begin{twocolentry}{
+        {\textit{2025}}}
+        \textbf{\href{https://github.com/annikasalmi/mdwarf-habitability}{mdwarf-habitability}}
+        \end{twocolentry}
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Predicted the number of habitable zone planets HWO and LIFE will detect using an MCMC simulated planetary population. LIFE found more planets than HWO, but HWO was more successful for G-type stars.
+            \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.20 cm}
+        
+        \begin{twocolentry}{ 
+        {\textit{2024}}}
+            \textbf{\href{https://github.com/annikasalmi/exo-venus-evolution}{exo-venus-evolution}}
+        \end{twocolentry}
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Model the evolution of "exo-Venuses" over their geological history, using Venus and exo-Venus data.
+            \end{highlights}
+        \end{onecolentry}
+
+        \vspace{0.20 cm}
+
+        \begin{twocolentry}{
+       {\textit{2020}}}
+            \textbf{\href{https://github.com/annikasalmi/alignpy}{alignpy}}
+        \end{twocolentry}
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Built a tool that locally downloads FITS files of astronomical objects, specified by filter and catalog. Once they are downloaded, the image files can be aligned and plotted via addition, subtraction, or division
+            \end{highlights}
+        \end{onecolentry}
+
+% VOLUNTEERING
+
+    \section{Science Communication}    
+    
+    \textbf{Teaching \& mentoring}
+    \begin{twocolentry}{\mbox{\textit{ETH, summer 2026}}}
+        Supervised student Hongyi Mei: Kepler and TESS Selection Biases	
+    \end{twocolentry}
+    \begin{twocolentry}{\mbox{\textit{ETH, spring 2026}}}
+        TA, Space Data, taught by Dr. Stähler, Dr. Bentel, and Dr. Staub
+    \end{twocolentry}
+    \begin{twocolentry}{\mbox{\textit{Cambridge, 2024-25}}}
+        Institute of Astronomy science night volunteer
+    \end{twocolentry}
+    \begin{twocolentry}{\mbox{\textit{Yale, 2017–21}}}
+        President (2018–2021), \textit{Starlab Planetarium Shows}
+    \end{twocolentry}
+    \vspace{0.20 cm}
+    
+    \vspace{0.20 cm}
+    \textbf{Science writing}
+    \begin{twocolentry}{\mbox{\textit{present}}}
+        Astrobites Writer
+    \end{twocolentry}
+    \begin{twocolentry}{\mbox{\textit{Yale, 2020-21}}}
+        SciTech Desk Writer, \textit{Yale Daily News}
+    \end{twocolentry}
+    \begin{onecolentry}
+        Popular astronomy writing has also appeared in Matador Network and Study Breaks.
+    \end{onecolentry}
+
+    \vspace{0.1 cm}
+
+
+    \section{Activities}    
+
+
+    \vspace{0.10 cm}
+    \begin{twocolentry}{
+        \textit{Yale, 2017-21} }
+        \textbf{Yale Free \& Alpine Ski Team}
+            
+        \textit{Captain 2019-2020}
+    \end{twocolentry}
+    \vspace{0.10 cm}
+    \vspace{0.10 cm}
+    \textbf{Languages:} English (native), Spanish (advanced), French (intermediate)     
+    \vspace{0.10 cm}   
+    \newline
+    \textbf{Dual citizen of USA and Finland; Swiss resident.}
+
+        
+\end{document}

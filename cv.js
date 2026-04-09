@@ -121,12 +121,6 @@ const CV_DATA = [
                     "Generated channel telescope frequency versus intensity graphs of well-known bright stars on the Canadian Hydrogen Intensity Mapping Experiment (CHIME) to find telescope accuracy. Found ~5 frequency channels that were over- and under-measuring intensity; results calibrated telescope.",
                     "Research done with Cedar supercomputer; funded by the Richter Memorial Fund."
                 ]
-            },
-            {
-                title: "Museum Assistant in Paleobotany",
-                institution: "Peabody Museum, Yale University",
-                year: "Aug 2018 – Dec 2018",
-                description: []
             }
         ]
     },
@@ -135,7 +129,7 @@ const CV_DATA = [
         type: "boxed_list",
         contents: [
             "<strong>Skills:</strong> Cleaning and analyzing astronomical images, generating synthetic images, scientific and big data cloud computing, MCMC simulations, satellite orbit determination filtering algorithms, scientific writing",
-            "<strong>Languages:</strong> Python (6 years), Bash/Unix scripting (4 years), C++ (3 years), MATLAB (2 years), R (2 years), YAML (2 years)",
+            "<strong>Languages:</strong> Python (6 years), Bash/Unix scripting (4 years), C++ (3 years), MATLAB (2 years), R (2 years)",
             "<strong>Software tools:</strong> <em>Astronomy:</em> DS9, FITS, <em>Synthetic images:</em> Blender, cuda, <em>Aerospace:</em> Freeflyer, <em>Developer:</em> Linux, Git, Jira, VSCode, Cursor, <em>Cloud:</em> Google Cloud, Kubernetes, Docker"
         ]
     },
@@ -161,21 +155,14 @@ const CV_DATA = [
     }
 ];
 
-// Papers & Posters content (now rendered outside CV)
+// Papers content (now rendered outside CV)
 const PAPERS_CONTENT = [
-    "<em>Revisiting TOI-4438 and TOI-442 planetary systems with new observations from SPIRou and TESS</em>, in prep.<br>J. \
+    "<em>Revisiting TOI-4438 and TOI-442 planetary systems with new observations from SPIRou and TESS</em>, submitted.<br>J. \
     Bell, G. Hébrard, E. Martioli, R. Díaz, L. de Almeida, R. Doyon, D. de Oliveira, A. L'Heureux, É. Artigau, L. Arnold, \
     I. Boisse, X. Bonfils, A. Carmona, N. J. Cook, X. Delfosse, J.-F. Donati, <strong>A. Salmi</strong>, M. Valatsou",
 
-    "<em>The GAPS Programme at TNG: Confirmation of the hot sub-Neptune TOI-4602 b (HD 25295 b), \
-    a transitional planet key target for future atmospheric characterization</em>, in prep.<br>]\
-    C. Di Maio, S. Benatti1, D. Locci1, R. Spinelli1, M. Baratella2, K. Biazzo3, J. Maldonado1, C. Dorn, \
-    P. E. Cubillos, <strong>A. Salmi</strong>, A. Maggio, L. Naponiello, A. F. Lanza, F. Marzari, L. Malavolta, \
-    M. Damasso, T. Zingales, A. Sozzetti",
-    
-    "Conference poster: <em>Assessing the habitability and potential detectability of life on planets around M dwarfs</em>, \
-    Cambridge Life in the Universe Science Day (2025)<br>V. Ellmies, I. Kisvárdai, M. Kreuziger, A. Kumar, \
-    <strong>A. Salmi</strong> (equal contributions)",
+    "<em>The GAPS Programme at TNG. TBD. Confirmation of the hot sub-Neptune TOI-4602 b (HD 25295 b), a transitional planet key target for future atmospheric characterization</em>, submitted.<br>\
+    C. Di Maio, S. Benatti, D. Locci, R. Spinelli, M. Baratella, K. Biazzo, J. Maldonado, A. F. Lanza, C. Dorn, P. E. Cubillos, <strong>A. Salmi</strong>...",
 ];
 
 // Function to render time table entries
@@ -293,7 +280,7 @@ function renderNestedList(contents) {
     return `<ul class="cv-nested-list">${validItems.map(item => `<li>${renderHtml(item)}</li>`).join('')}</ul>`;
 }
 
-// Render Papers & Posters as standalone section
+// Render Papers as standalone section
 function renderPapers() {
     const container = document.getElementById('papers-content');
     if (!container) return;
@@ -399,7 +386,7 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('CV_DATA length:', CV_DATA.length);
     console.log('CV_DATA first section:', CV_DATA[0]);
     
-    // Render Papers & Posters standalone section
+    // Render Papers standalone section
     renderPapers();
     
     // Try to render immediately first

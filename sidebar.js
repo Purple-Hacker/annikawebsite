@@ -92,27 +92,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 const linkEl = document.getElementById(link.id);
                 if (linkEl) {
                     linkEl.addEventListener('click', function(e) {
-                        // Toggle CV dropdown when clicking the CV parent link
-                        if (link.id === 'nav-cv') {
-                            const subnav = document.querySelector('.cv-subnav');
-                            if (subnav) {
-                                e.preventDefault();
-                                subnav.classList.toggle('open');
-                                linkEl.setAttribute('aria-expanded', subnav.classList.contains('open'));
-                                return;
-                            }
-                        }
-                        // Prevent default full reload when using absolute hashes like /#cv
-                        if (linkEl.getAttribute('href') && linkEl.getAttribute('href').startsWith('/#')) {
-                            e.preventDefault();
-                        }
+                        const href = linkEl.getAttribute('href') || '';
+                        const isAbsoluteHashLink = href.startsWith('/#');
+
+                        // Only hijack clicks for smooth scrolling if the target exists on this page.
+                        // Otherwise, allow normal navigation (e.g. from cv.html back to /#about).
                         const targetEl = document.getElementById(link.target);
-                        if (targetEl && typeof targetEl.scrollIntoView === 'function') {
+                        if (isAbsoluteHashLink && targetEl && typeof targetEl.scrollIntoView === 'function') {
+                            e.preventDefault();
                             targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            // Set active immediately on click to reflect intent
+                            setActive(linkEl);
+                            history.replaceState(null, '', `#${link.target}`);
                         }
-                        // Set active immediately on click to reflect intent
-                        setActive(linkEl);
-                        history.replaceState(null, '', `#${link.target}`);
                     });
                 }
             });
