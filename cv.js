@@ -161,7 +161,7 @@ const PAPERS_CONTENT = [
     Bell, G. Hébrard, E. Martioli, R. Díaz, L. de Almeida, R. Doyon, D. de Oliveira, A. L'Heureux, É. Artigau, L. Arnold, \
     I. Boisse, X. Bonfils, A. Carmona, N. J. Cook, X. Delfosse, J.-F. Donati, <strong>A. Salmi</strong>, M. Valatsou",
 
-    "<em>The GAPS Programme at TNG. TBD. Confirmation of the hot sub-Neptune TOI-4602 b (HD 25295 b), a transitional planet key target for future atmospheric characterization</em>, submitted.<br>\
+    "<em>The GAPS Programme at TNG. TBD. Confirmation of the hot sub-Neptune TOI-4602 b (HD 25295 b), a transitional planet key target for future atmospheric characterization</em>, accepted.<br>\
     C. Di Maio, S. Benatti, D. Locci, R. Spinelli, M. Baratella, K. Biazzo, J. Maldonado, A. F. Lanza, C. Dorn, P. E. Cubillos, <strong>A. Salmi</strong>...",
 ];
 
