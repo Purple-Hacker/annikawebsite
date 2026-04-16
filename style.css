@@ -622,7 +622,7 @@ div.content {
 }
 
 .science-writing-content a:visited {
-    color: var(--theme-color);
+    color: #551A8B;
     text-decoration: underline;
 }
 
@@ -645,7 +645,7 @@ a.goodreads-link:active {
 }
 
 a.goodreads-link:visited {
-    color: var(--theme-color);
+    color: #551A8B;
     text-decoration: underline;
 }
 
