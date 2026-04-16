@@ -18,8 +18,7 @@ const REPOSITORIES = [
     'mdwarf-habitability',
     'exo-venus-evolution',
     'exo-atm-predict',
-    'alignpy',
-    'annikasalmi.github.io'
+    'alignpy'
 ];
 
 // Simple HTML escape to avoid accidental markup injection
