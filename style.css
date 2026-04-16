@@ -518,7 +518,7 @@ div.content {
 .cv-nested-list li {
     margin-bottom: 8px;
     line-height: 1.5;
-    color: #333;
+    color: #000;
 }
 
 /* Make list items white when inside green CV sections */
@@ -616,19 +616,37 @@ div.content {
 .science-writing-content a {
     display: inline;
     margin-bottom: 0;
-    color: var(--theme-color);
-    text-decoration: none;
+    color: #4fafa6;
+    text-decoration: underline;
     line-height: 1;
-    transition: color 0.2s ease;
 }
 
-.science-writing-content a:hover {
+.science-writing-content a:visited {
+    color: var(--theme-color);
+    text-decoration: underline;
+}
+
+.science-writing-content a:hover,
+.science-writing-content a:active {
     color: #4fafa6;
     text-decoration: underline;
 }
 
 .science-writing-content br {
     display: inline;
+}
+
+/* Goodreads link styling (only for that link) */
+a.goodreads-link,
+a.goodreads-link:hover,
+a.goodreads-link:active {
+    color: #4fafa6;
+    text-decoration: underline;
+}
+
+a.goodreads-link:visited {
+    color: var(--theme-color);
+    text-decoration: underline;
 }
 
 /* CV Error States */
