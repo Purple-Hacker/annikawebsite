@@ -528,12 +528,21 @@ div.content {
 }
 
 #papers,
-#papers .cv-list li,
-#papers a,
-#papers a:visited,
-#papers a:hover,
-#papers a:active {
+#papers .cv-list li {
     color: #000;
+}
+
+#papers a[href*="arxiv.org"] {
+    color: #4fafa6;
+}
+
+#papers a[href*="arxiv.org"]:visited {
+    color: #551A8B;
+}
+
+#papers a[href*="arxiv.org"]:hover,
+#papers a[href*="arxiv.org"]:active {
+    color: #4fafa6;
 }
 
 /* Boxed list items (used for Technical Skills) */
