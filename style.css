@@ -527,6 +527,15 @@ div.content {
     color: white;
 }
 
+#papers,
+#papers .cv-list li,
+#papers a,
+#papers a:visited,
+#papers a:hover,
+#papers a:active {
+    color: #000;
+}
+
 /* Boxed list items (used for Technical Skills) */
 .cv-box-list {
     display: grid;
@@ -714,4 +723,3 @@ a.goodreads-link:visited {
         font-size: 38px;
     }
 }
-
