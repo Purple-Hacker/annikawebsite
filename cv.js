@@ -158,7 +158,7 @@ const CV_DATA = [
 
 // Papers content (now rendered outside CV)
 const PAPERS_CONTENT = [
-    "<em>The Role of Formation Location in Shaping Sulfur-, Nitrogen-, and Carbon-Bearing Species in Super-Earth and Sub-Neptune Atmospheres</em>, accepted ([<a href=\"https://arxiv.org/abs/2605.15170\" target=\"_blank\" rel=\"noopener noreferrer\">arXiv</a>]).<br>\
+    "<em>The Role of Formation Location in Shaping Sulfur-, Nitrogen-, and Carbon-Bearing Species in Super-Earth and Sub-Neptune Atmospheres</em> ([<a href=\"https://doi.org/10.3847/1538-4357/ae742f\" target=\"_blank\" rel=\"noopener noreferrer\">DOI</a>]).<br>\
     A. Werlen, R. Burn, C. Dorn, L. Felix, <strong>A. Salmi</strong>",
 
     "<em>The GAPS Programme at TNG. LXXIII. Confirmation of the hot sub-Neptune TOI-4602 b (HD 25295 b), a key target for future atmospheric characterization</em>, accepted ([<a href=\"https://arxiv.org/abs/2604.11728\" target=\"_blank\" rel=\"noopener noreferrer\">arXiv</a>]).<br>\
