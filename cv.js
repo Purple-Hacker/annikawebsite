@@ -158,10 +158,10 @@ const CV_DATA = [
 
 // Papers content (now rendered outside CV)
 const PAPERS_CONTENT = [
-    "<em>The Role of Formation Location in Shaping Sulfur-, Nitrogen-, and Carbon-Bearing Species in Super-Earth and Sub-Neptune Atmospheres</em>, accepted. ([<a href=\"https://doi.org/10.3847/1538-4357/ae742f\" target=\"_blank\" rel=\"noopener noreferrer\">DOI</a>]).<br>\
+    "<em>The Role of Formation Location in Shaping Sulfur-, Nitrogen-, and Carbon-Bearing Species in Super-Earth and Sub-Neptune Atmospheres</em>, accepted. (<a href=\"https://arxiv.org/abs/2605.15170\" target=\"_blank\" rel=\"noopener noreferrer\">arXiv</a>).<br>\
     A. Werlen, R. Burn, C. Dorn, L. Felix, <strong>A. Salmi</strong>",
 
-    "<em>The GAPS Programme at TNG. LXXIII. Confirmation of the hot sub-Neptune TOI-4602 b (HD 25295 b), a key target for future atmospheric characterization</em>, accepted ([<a href=\"https://arxiv.org/abs/2604.11728\" target=\"_blank\" rel=\"noopener noreferrer\">arXiv</a>]).<br>\
+    "<em>The GAPS Programme at TNG. LXXIII. Confirmation of the hot sub-Neptune TOI-4602 b (HD 25295 b), a key target for future atmospheric characterization</em>, accepted (<a href=\"https://arxiv.org/abs/2604.11728\" target=\"_blank\" rel=\"noopener noreferrer\">arXiv</a>).<br>\
     C. Di Maio, S. Benatti, D. Locci, R. Spinelli, M. Baratella, K. Biazzo, J. Maldonado, A. F. Lanza, C. Dorn, P. E. Cubillos, <strong>A. Salmi</strong>...",
 
     "<em>Revisiting TOI-4438 and TOI-442 planetary systems with new observations from SPIRou and TESS</em>, accepted.<br>J. \
